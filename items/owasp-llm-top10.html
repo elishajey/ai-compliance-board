@@ -167,16 +167,11 @@
   .ip-history .h-tier { font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--muted); border: 1px solid var(--line-strong); border-radius: 2px; padding: 0 4px; margin-left: 6px; }
   .sc-new { --sc: var(--stat-new); } .sc-draft { --sc: var(--stat-draft); } .sc-stable { --sc: var(--stat-stable); }
 
-  /* ------- 기업 의견수렴(consultation) 강조 — 색은 --m5(terracotta) 계열 ------- */
-  .chip .consult { display: block; margin-top: 5px; font-family: "IBM Plex Mono", monospace; font-size: 10px; font-weight: 700; color: var(--m5); letter-spacing: .01em; }
-  .consult-box { margin: 22px 0 4px; border: 1px solid var(--m5); border-left: 4px solid var(--m5); border-radius: 4px; background: var(--m5-soft); padding: 14px 16px; }
-  .consult-box h3 { font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--m5); margin: 0 0 8px; }
-  .consult-box ul { list-style: none; margin: 0; padding: 0; }
-  .consult-box li { padding: 5px 0; font-size: .9rem; border-top: 1px dashed var(--line); }
-  .consult-box li:first-child { border-top: none; }
-  .consult-box .c-dday { font-family: "IBM Plex Mono", monospace; font-weight: 700; color: var(--m5); margin-left: 6px; }
-  .ip-consult { border: 1px solid var(--m5); border-left: 4px solid var(--m5); border-radius: 4px; background: var(--m5-soft); padding: 12px 16px; margin: 18px 0 6px; font-size: .95rem; }
-  .ip-consult b { color: var(--m5); }
+  /* ------- 기업 의견수렴(consultation) — chip 마커·상단 박스는 인라인 style 로 생성한다
+     (board.html 이 _email_render_registry.py 를 거치는데 미치환 class 를 거부하므로).
+     여기 CSS 는 항목 상세 페이지(items/*.html, 이메일 렌더러 안 거침) 전용. ------- */
+  .ip-consult { border: 1px solid #b0531d; border-left: 4px solid #b0531d; border-radius: 4px; background: #f0dfd1; padding: 12px 16px; margin: 18px 0 6px; font-size: .95rem; }
+  .ip-consult b { color: #b0531d; }
 </style>
 
 <div class="wrap item-page sc-new">
