@@ -141,8 +141,11 @@
   }
 
   /* ------- 상세(펼쳐보기) 섹션 — index.html 전용 ------- */
-  a.chip-link { text-decoration: none; color: inherit; display: block; }
-  a.chip-link:hover .chip { border-color: var(--mc); }
+  /* 칩 전체를 상세 앵커로 만드는 "stretched link" — 중첩 <a> 를 피하려고
+     칩 안에 절대배치 링크를 깔고, 실제 외부 링크(a.when)는 그 위로 올린다. */
+  .chip > a.chip-jump { position: absolute; inset: 0; z-index: 1; border-radius: 4px; }
+  .chip:hover { border-color: var(--mc); }
+  .chip .stat a.when { position: relative; z-index: 2; }
   .details { margin-top: 64px; }
   .details > h2 { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 1.5rem; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin: 0 0 8px; }
   .details > .intro { font-size: .9rem; color: var(--muted); margin: 0 0 24px; }
