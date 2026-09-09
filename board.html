@@ -1,0 +1,343 @@
+<title>AI 보안 컴플라이언스 모니터링 보드</title>
+<meta name="description" content="NIST·MITRE·OWASP·ISO 등 AI 보안·프라이버시 규격/프레임워크 40여 종을 발행 주체별 8개 모듈로 나눠 모니터링하는 보드 — 각 기준의 요약·전문·변동 이력 포함">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #eef1f4;
+    --surface: #ffffff;
+    --surface-2: #f6f8fa;
+    --ink: #18212e;
+    --ink-soft: #3d4a5c;
+    --muted: #63707f;
+    --line: #d5dce3;
+    --line-strong: #b7c1cc;
+    --accent: #0d7c86;
+    --accent-soft: #d3ebec;
+    --shadow: 0 1px 2px rgba(24,33,46,.06), 0 8px 24px -12px rgba(24,33,46,.18);
+
+    --m1: #0d7c86; --m1-soft: #d3ebec; --m1-line: #9fcdd2;
+    --m2: #2f5fa8; --m2-soft: #dbe6f6; --m2-line: #a9c1e6;
+    --m3: #6a4bb0; --m3-soft: #e6dff5; --m3-line: #c3b2e4;
+    --m4: #9a7000; --m4-soft: #f2e9c9; --m4-line: #ddc47c;
+    --m5: #b0531d; --m5-soft: #f0dfd1; --m5-line: #dfae87;
+    --m6: #2f7a4e; --m6-soft: #d8ebdf; --m6-line: #9dcbae;
+    --m7: #46525f; --m7-soft: #e3e7eb; --m7-line: #b6c0cb;
+    --m8: #a24a63; --m8-soft: #f3dee4; --m8-line: #dcb0bd;
+
+    --stat-new: #2f7a4e;
+    --stat-draft: #9a7000;
+    --stat-stable: #63707f;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e131a; --surface: #161d27; --surface-2: #1b232f;
+      --ink: #e6ebf1; --ink-soft: #b8c2ce; --muted: #8b97a6;
+      --line: #2a333f; --line-strong: #3a4552;
+      --accent: #3bb7c2; --accent-soft: #123037;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.55);
+
+      --m1: #3bb7c2; --m1-soft: #123037; --m1-line: #1f4a52;
+      --m2: #6f9bdc; --m2-soft: #16233a; --m2-line: #2a3f60;
+      --m3: #a98ee0; --m3-soft: #241c3a; --m3-line: #3a2c58;
+      --m4: #d6ab3e; --m4-soft: #2e2410; --m4-line: #4a3a17;
+      --m5: #d98442; --m5-soft: #2f1e10; --m5-line: #4a331c;
+      --m6: #5cae7d; --m6-soft: #16281d; --m6-line: #274633;
+      --m7: #a3aeb9; --m7-soft: #232a32; --m7-line: #384049;
+      --m8: #d98aa0; --m8-soft: #34202a; --m8-line: #4a2c37;
+
+      --stat-new: #5cae7d; --stat-draft: #d6ab3e; --stat-stable: #8b97a6;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e131a; --surface: #161d27; --surface-2: #1b232f;
+    --ink: #e6ebf1; --ink-soft: #b8c2ce; --muted: #8b97a6;
+    --line: #2a333f; --line-strong: #3a4552;
+    --accent: #3bb7c2; --accent-soft: #123037;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.55);
+
+    --m1: #3bb7c2; --m1-soft: #123037; --m1-line: #1f4a52;
+    --m2: #6f9bdc; --m2-soft: #16233a; --m2-line: #2a3f60;
+    --m3: #a98ee0; --m3-soft: #241c3a; --m3-line: #3a2c58;
+    --m4: #d6ab3e; --m4-soft: #2e2410; --m4-line: #4a3a17;
+    --m5: #d98442; --m5-soft: #2f1e10; --m5-line: #4a331c;
+    --m6: #5cae7d; --m6-soft: #16281d; --m6-line: #274633;
+    --m7: #a3aeb9; --m7-soft: #232a32; --m7-line: #384049;
+    --m8: #d98aa0; --m8-soft: #34202a; --m8-line: #4a2c37;
+
+    --stat-new: #5cae7d; --stat-draft: #d6ab3e; --stat-stable: #8b97a6;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px 88px; }
+
+  header.mast { border-bottom: 2px solid var(--ink); padding: 44px 0 20px; margin-bottom: 6px; }
+  .kicker { font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
+  h1 { font-family: "Archivo", sans-serif; font-weight: 700; font-size: clamp(1.9rem, 4.6vw, 2.7rem); line-height: 1.08; letter-spacing: -.015em; text-wrap: balance; margin: 10px 0 12px; }
+  .standfirst { font-size: 1.02rem; color: var(--ink-soft); max-width: 68ch; margin: 0; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 7px 18px; margin-top: 18px; font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--muted); }
+  .legend b { color: var(--ink-soft); font-weight: 600; }
+  .byline { text-align: right; margin: 10px 0 0; font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--muted); }
+
+  .modgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; margin-top: 34px; }
+
+  .mod { background: var(--surface); border: 1px solid var(--line); border-radius: 5px; box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; }
+  .mod-head { display: flex; align-items: baseline; gap: 10px; padding: 14px 16px 12px; border-bottom: 1px solid var(--line); background: var(--surface-2); border-top: 3px solid var(--mc); }
+  .mod-no { font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 12px; color: var(--mc); border: 1px solid var(--mc); border-radius: 2px; padding: 1px 6px; flex: none; }
+  .mod-title { font-family: "Archivo", sans-serif; font-weight: 600; font-size: 1.02rem; letter-spacing: -.005em; margin: 0; }
+  .mod-sub { font-size: .82rem; color: var(--muted); margin: 2px 0 0; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 16px 16px; align-content: flex-start; flex: 1; }
+  .chip {
+    position: relative; background: var(--mc-soft); border: 1px solid var(--mc-line); border-radius: 4px;
+    padding: 7px 9px 6px; min-width: 122px; flex: 1 1 148px;
+  }
+  .chip .name { display: block; font-size: 12.3px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .chip .code { display: block; font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--mc); margin-top: 3px; letter-spacing: .01em; }
+  .chip .org { display: block; font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+  .chip .tags { position: absolute; top: 5px; right: 6px; font-size: 9.5px; letter-spacing: 1px; opacity: .82; }
+
+  .chip .stat { display: flex; align-items: center; gap: 4px; margin-top: 6px; padding-top: 5px; border-top: 1px dashed var(--mc-line); font-family: "IBM Plex Mono", monospace; font-size: 9.5px; letter-spacing: .01em; }
+  .chip .stat .dot { width: 6px; height: 6px; border-radius: 50%; flex: none; }
+  .chip .stat .lbl { font-weight: 600; }
+  .chip .stat .when { color: var(--muted); font-weight: 400; }
+  .chip .stat a.when { color: var(--accent); font-weight: 400; text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .chip .stat a.when:hover { border-bottom-style: solid; }
+  .chip .law-note { display: block; font-size: 10px; color: var(--muted); margin-top: 3px; font-style: italic; }
+  .st-new .dot { background: var(--stat-new); } .st-new .lbl { color: var(--stat-new); }
+  .st-draft .dot { background: var(--stat-draft); } .st-draft .lbl { color: var(--stat-draft); }
+  .st-stable .dot { background: var(--stat-stable); } .st-stable .lbl { color: var(--stat-stable); }
+
+  .m1 { --mc: var(--m1); --mc-soft: var(--m1-soft); --mc-line: var(--m1-line); }
+  .m2 { --mc: var(--m2); --mc-soft: var(--m2-soft); --mc-line: var(--m2-line); }
+  .m3 { --mc: var(--m3); --mc-soft: var(--m3-soft); --mc-line: var(--m3-line); }
+  .m4 { --mc: var(--m4); --mc-soft: var(--m4-soft); --mc-line: var(--m4-line); }
+  .m5 { --mc: var(--m5); --mc-soft: var(--m5-soft); --mc-line: var(--m5-line); }
+  .m6 { --mc: var(--m6); --mc-soft: var(--m6-soft); --mc-line: var(--m6-line); }
+  .m7 { --mc: var(--m7); --mc-soft: var(--m7-soft); --mc-line: var(--m7-line); }
+  .m8 { --mc: var(--m8); --mc-soft: var(--m8-soft); --mc-line: var(--m8-line); }
+
+  .mod-span2 { grid-column: 1 / -1; }
+  .mod-span2 .chips { flex-wrap: nowrap; overflow-x: auto; }
+  .mod-span2 .chip { flex: 1 1 220px; min-width: 200px; }
+
+  footer.foot { margin-top: 56px; padding-top: 16px; border-top: 2px solid var(--ink); font-size: .8rem; color: var(--muted); }
+  footer.foot code { font-family: "IBM Plex Mono", monospace; font-size: .76rem; color: var(--ink-soft); }
+  a { color: var(--accent); }
+
+  @media (max-width: 520px) {
+    .modgrid { grid-template-columns: 1fr; }
+    .chip { flex-basis: 100%; }
+  }
+
+  /* ------- 상세(펼쳐보기) 섹션 — index.html 전용 ------- */
+  a.chip-link { text-decoration: none; color: inherit; display: block; }
+  a.chip-link:hover .chip { border-color: var(--mc); }
+  .details { margin-top: 64px; }
+  .details > h2 { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 1.5rem; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin: 0 0 8px; }
+  .details > .intro { font-size: .9rem; color: var(--muted); margin: 0 0 24px; }
+  .det-mod { font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin: 30px 0 10px; }
+  details.item { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--sc); border-radius: 4px; margin: 8px 0; box-shadow: var(--shadow); }
+  details.item > summary { list-style: none; cursor: pointer; padding: 12px 16px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  details.item > summary::-webkit-details-marker { display: none; }
+  details.item > summary .sdot { width: 7px; height: 7px; border-radius: 50%; background: var(--sc); flex: none; align-self: center; }
+  details.item > summary .sname { font-weight: 600; font-size: .98rem; }
+  details.item > summary .scode { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--muted); }
+  details.item > summary .sorg { font-size: 11px; color: var(--muted); }
+  details.item > summary .slbl { margin-left: auto; font-family: "IBM Plex Mono", monospace; font-size: 10px; font-weight: 600; color: var(--sc); }
+  details.item[open] > summary { border-bottom: 1px solid var(--line); }
+  .det-body { padding: 14px 16px 16px; font-size: .92rem; }
+  .det-body .lede { color: var(--ink-soft); margin: 0 0 14px; }
+  .det-h { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 14px 0 6px; }
+  .det-links a { display: inline-block; margin-right: 14px; font-size: .86rem; }
+  .det-updates { list-style: none; margin: 0; padding: 0; }
+  .det-updates li { padding: 7px 0; border-top: 1px dashed var(--line); font-size: .86rem; }
+  .det-updates li:first-child { border-top: none; }
+  .det-updates .u-date { font-family: "IBM Plex Mono", monospace; font-weight: 600; color: var(--ink-soft); margin-right: 8px; }
+  .det-updates .u-tier { font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--muted); border: 1px solid var(--line-strong); border-radius: 2px; padding: 0 4px; margin-left: 6px; }
+  .det-checked { margin-top: 12px; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; color: var(--muted); }
+  .sc-new { --sc: var(--stat-new); } .sc-draft { --sc: var(--stat-draft); } .sc-stable { --sc: var(--stat-stable); }
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="kicker">Compliance Registry · 기준일 2026-09-04</div>
+    <h1>[2026.09.09] AI 보안 컴플라이언스 모니터링 보드</h1>
+    <div class="legend">
+      <span><b>⭐</b> 사실상 표준</span>
+      <span><b>🔐</b> 보안 특화</span>
+      <span><b>🕵</b> 개인정보 특화</span>
+      <span><b>📜</b> 인증·감사 가능</span>
+      <span><b>⚖️</b> 구속력 있는 법령(참고 표기 — 이 보드 본연의 범위 밖)</span>
+      <span>모듈 번호 = 게재 순서 · 국가 우선순위 한국→유럽→미국 적용</span>
+    </div>
+    <div class="legend" style="margin-top:4px;">
+      <span><b>T1</b> 원문·공식(발행기관 자체 사이트)</span>
+      <span><b>T2</b> 공신력 2차(추적 서비스·집계 매체 등 비공식 경로로 확인)</span>
+      <span><b>T3</b> 미확인·재확인 필요(직접 링크 없이 서술만)</span>
+      <span>등급은 각 상태 링크 옆 [T1/T2/T3]로 표기</span>
+    </div>
+    <div class="legend" style="margin-top:8px;">
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--stat-new);display:inline-block;"></span><b style="color:var(--stat-new)">갱신/신규</b> 최근 확인된 공표·개정·발행</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--stat-draft);display:inline-block;"></span><b style="color:var(--stat-draft)">초안/의견수렴</b> 확정 전 단계</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--stat-stable);display:inline-block;"></span><b style="color:var(--stat-stable)">안정</b> 정기 채널만 — 확인된 변동 없음</span>
+    </div>
+    <p class="byline">reported by elishaJEY</p>
+  </header>
+
+  <div class="modgrid">
+
+    <section class="mod m6">
+      <div class="mod-head">
+        <span class="mod-no">01</span>
+        <div>
+          <p class="mod-title">🇰🇷 대한민국</p>
+          <p class="mod-sub">KISA · (예정) ISMS-AI</p>
+        </div>
+      </div>
+      <div class="chips">
+        <div class="chip"><span class="tags">🔐</span><span class="name">AI 보안 가이드라인</span><span class="code">KISA</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://www.kisa.or.kr/2060204/form?postSeq=19&amp;page=1" target="_blank" rel="noopener">갱신 · 정오표 반영 재배포 2026-03-13 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">📜</span><span class="name">ISMS 확장 인증(예정)</span><span class="code">ISMS-AI</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 예정 상태 유지 [T2]</span></span></div>
+        <div class="chip"><span class="tags">⚖️</span><span class="name">AI 기본법(구속력 있는 법령·참고)</span><span class="code">법률 제20676호</span><span class="law-note">이 보드 범위 밖 — 상세는 일일 리포트 §1</span><span class="stat st-stable"><span class="dot"></span><a class="when" href="https://www.law.go.kr/lsInfoP.do?lsiSeq=268543" target="_blank" rel="noopener">조문 확인 [T1] ↗</a></span></div>
+      </div>
+    </section>
+    <section class="mod m2">
+      <div class="mod-head">
+        <span class="mod-no">02</span>
+        <div>
+          <p class="mod-title">유럽</p>
+          <p class="mod-sub">ENISA · CEN-CENELEC JTC 21 · EDPB/DPA</p>
+        </div>
+      </div>
+      <div class="chips">
+        <div class="chip"><span class="tags">🔐⭐</span><span class="name">FAICP — 3계층 프레임워크</span><span class="code">ENISA</span><span class="org">EU 사이버보안청</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 2026-06 기준 후속판 로드맵 없음[T2]</span></span></div>
+        <div class="chip"><span class="name">AI 위험관리</span><span class="code">EN 18228</span><span class="org">JTC 21</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://jtc21.eu/significant-milestone-for-european-ai-standardization/" target="_blank" rel="noopener">갱신 · 공개열람 마감 07-30 통과 [T1] ↗</a></span></div>
+        <div class="chip"><span class="name">AI 시스템 사이버보안 사양</span><span class="code">EN 18282</span><span class="org">JTC 21</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://jtc21.eu/significant-milestone-for-european-ai-standardization/" target="_blank" rel="noopener">갱신 · 공개열람 마감 07-30 통과 [T1] ↗</a></span></div>
+        <div class="chip"><span class="name">AI 품질경영시스템(AI Act 제17조)</span><span class="code">EN 18286:2026</span><span class="org">JTC 21</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-07-30-ai-quality-management/" target="_blank" rel="noopener">갱신 · 첫 AI Act 조화표준 07-12 승인·발행 · OJ 인용 0건 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">🕵⭐</span><span class="name">모델 익명성·후속처리 의견</span><span class="code">Opinion 28/2024</span><span class="org">EDPB</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 2024-12 이후 개정 없음 [T1]</span></span></div>
+        <div class="chip"><span class="tags">🕵</span><span class="name">익명화 · 생성형 AI 웹스크래핑 가이드라인</span><span class="code">Guidelines 02/2026 · 03/2026</span><span class="org">EDPB</span><span class="stat st-draft"><span class="dot"></span><a class="when" href="https://www.edpb.europa.eu/news/edpb-sheds-light-on-anonymisation-and-web-scraping-for-generative-ai-and-adopts-final-version_en" target="_blank" rel="noopener">초안 · 07-07 채택 · 의견수렴 10-30 마감 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">🕵</span><span class="name">AI GDPR 가이드·감사툴킷</span><span class="code">CNIL · ICO</span><span class="org">각국 DPA</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 개정 확인 안 됨 [T1]</span></span></div>
+      </div>
+    </section>
+    <section class="mod m1">
+      <div class="mod-head">
+        <span class="mod-no">03</span>
+        <div>
+          <p class="mod-title">미국 정부·비영리</p>
+          <p class="mod-sub">NIST · MITRE · CISA/NSA · Five Eyes+</p>
+        </div>
+      </div>
+      <div class="chips">
+        <div class="chip"><span class="tags">⭐</span><span class="name">AI Risk Management Framework</span><span class="code">NIST AI 100-1</span><span class="org">NIST</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 2023-01 이후 개정 없음 [T1]</span></span></div>
+        <div class="chip"><span class="tags">⭐</span><span class="name">Generative AI Profile</span><span class="code">NIST AI 600-1</span><span class="org">NIST</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 2024-07 이후 개정 없음 [T1]</span></span></div>
+        <div class="chip"><span class="tags">🔐⭐</span><span class="name">Adversarial ML 분류체계</span><span class="code">NIST AI 100-2 e2025</span><span class="org">NIST</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 2025-03 최종판 확정 [T1]</span></span></div>
+        <div class="chip"><span class="tags">🕵⭐</span><span class="name">Privacy Framework 1.1</span><span class="code">NIST PF</span><span class="org">NIST</span><span class="stat st-draft"><span class="dot"></span><a class="when" href="https://csrc.nist.gov/pubs/cswp/40/nist-privacy-framework-11/ipd" target="_blank" rel="noopener">초안 · 의견수렴 종료 · 최종판 2026 예정 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">🔐⭐</span><span class="name">ATLAS 공격 지식베이스</span><span class="code">ATT&amp;CK for AI</span><span class="org">MITRE</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://github.com/mitre-atlas/atlas-data/releases" target="_blank" rel="noopener">갱신 · v2026.08(09-01) · 자율 정찰·에이전트 통신 등 기법 13건 추가 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">🔐⭐</span><span class="name">Cyber AI Profile (CSF 2.0 연계)</span><span class="code">NIST IR 8596</span><span class="org">NIST NCCoE</span><span class="stat st-draft"><span class="dot"></span><a class="when" href="https://csrc.nist.gov/pubs/ir/8596/iprd" target="_blank" rel="noopener">초안 · 예비초안 2025-12-16 · 의견수렴 01-30 종료 · 공개초안 대기 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">🔐</span><span class="name">AI 시스템 보안 통제 오버레이</span><span class="code">SP 800-53 COSAiS</span><span class="org">NIST</span><span class="stat st-draft"><span class="dot"></span><a class="when" href="https://csrc.nist.gov/Projects/cosais/publications" target="_blank" rel="noopener">초안 · 예측형 AI 편 주석초안 2026-01-08 · 공개초안 대기 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">🔐</span><span class="name">AI 데이터센터 보안 분석(HPC 접근)</span><span class="code">SP 800-239</span><span class="org">NIST</span><span class="stat st-draft"><span class="dot"></span><a class="when" href="https://csrc.nist.gov/pubs/sp/800/239/ipd" target="_blank" rel="noopener">초안 · 공개초안 의견수렴 09-25 마감 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">🔐⭐</span><span class="name">Careful Adoption of Agentic AI Services</span><span class="code">2026-05</span><span class="org">CISA+NSA+Five Eyes</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://www.cisa.gov/resources-tools/resources/careful-adoption-agentic-ai-services" target="_blank" rel="noopener">신규 · 6개국 공동 최초 에이전틱 AI 보안 지침 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">⭐🔐</span><span class="name">Secure AI System Dev Guidelines</span><span class="code">2023-11</span><span class="org">CISA+NCSC 23개국</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 개정 확인 안 됨 [T1]</span></span></div>
+        <div class="chip"><span class="tags">🔐</span><span class="name">Deploying AI Systems Securely</span><span class="code">CSI 2024-04</span><span class="org">NSA AISC+CISA+FBI</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 개정 확인 안 됨 [T1]</span></span></div>
+      </div>
+    </section>
+    <section class="mod m3">
+      <div class="mod-head">
+        <span class="mod-no">04</span>
+        <div>
+          <p class="mod-title">국제 표준화기구</p>
+          <p class="mod-sub">ISO/IEC JTC 1/SC 42·SC 27 · IEEE</p>
+        </div>
+      </div>
+      <div class="chips">
+        <div class="chip"><span class="tags">📜⭐</span><span class="name">AI 경영시스템(AIMS)</span><span class="code">ISO/IEC 42001</span><span class="org">인증 가능</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 2023 기준판 유지 [T1]</span></span></div>
+        <div class="chip"><span class="tags">⭐</span><span class="name">AI 위험관리 지침</span><span class="code">ISO/IEC 23894</span><span class="org">ISO 31000의 AI판</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 2023 기준판 유지 [T1]</span></span></div>
+        <div class="chip"><span class="tags">🔐</span><span class="name">AI 보안 위협·통제</span><span class="code">ISO/IEC 27090</span><span class="org">개발 중</span><span class="stat st-draft"><span class="dot"></span><a class="when" href="https://www.iso.org/standard/56581.html" target="_blank" rel="noopener">초안 · FDIS 투표 08-19 마감 · 발행 대기 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">🕵</span><span class="name">AI 프라이버시 보호</span><span class="code">ISO/IEC 27091</span><span class="org">DIS 2025</span><span class="stat st-draft"><span class="dot"></span><a class="when" href="https://www.iso.org/standard/56582.html" target="_blank" rel="noopener">초안 · FDIS 최종안 07-13 · 발행 단계 진입 · 2026년 말 발행 전망 [T2] ↗</a></span></div>
+        <div class="chip"><span class="tags">🕵📜</span><span class="name">개인정보 경영시스템(PIMS)</span><span class="code">ISO/IEC 27701</span><span class="org">인증 가능</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 2019판 유지 · 개정 검토 중[T3]</span></span></div>
+        <div class="chip"><span class="tags">📜</span><span class="name">AI 윤리 인증</span><span class="code">IEEE CertifAIEd</span><span class="org">제품·전문가</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 개정 확인 안 됨 [T1]</span></span></div>
+      </div>
+    </section>
+    <section class="mod m7 mod-span2">
+      <div class="mod-head">
+        <span class="mod-no">05</span>
+        <div>
+          <p class="mod-title">국제기구·조약 — 거버넌스 층위</p>
+          <p class="mod-sub">다른 모든 모듈을 가로지르는 상위 규범 · 각국 정책의 공통 기준선</p>
+        </div>
+      </div>
+      <div class="chips">
+        <div class="chip"><span class="tags">📜</span><span class="name">최초의 법적 구속력 국제 AI 조약</span><span class="code">Framework Convention on AI (CETS 225)</span><span class="org">Council of Europe</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://www.coe.int/en/web/artificial-intelligence/-/european-union-ratifies-the-council-of-europe-framework-convention-on-artificial-intelligence" target="_blank" rel="noopener">갱신 · EU 비준 05-15 · 북마케도니아 05-08·알바니아 06-15 서명 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">⭐</span><span class="name">각국 정책 공통 기준</span><span class="code">OECD AI Principles</span><span class="org">OECD.AI</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 2024 개정판 유지 [T1]</span></span></div>
+        <div class="chip"><span class="name">연 1회 과학적 위험 평가</span><span class="code">International AI Safety Report</span><span class="org">30개국+ (Bengio 의장)</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 차기판 시점 미확인 [T3]</span></span></div>
+        <div class="chip"><span class="name">자율 보고체계·행동강령</span><span class="code">Hiroshima AI Process</span><span class="org">G7 / OECD</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 개정 확인 안 됨 [T3]</span></span></div>
+      </div>
+    </section>
+    <section class="mod m4">
+      <div class="mod-head">
+        <span class="mod-no">06</span>
+        <div>
+          <p class="mod-title">오픈소스·커뮤니티</p>
+          <p class="mod-sub">OWASP GenAI · CSA · CoSAI</p>
+        </div>
+      </div>
+      <div class="chips">
+        <div class="chip"><span class="tags">🔐⭐</span><span class="name">Top 10 for LLM Applications</span><span class="code">OWASP LLM Top 10</span><span class="org">genai.owasp.org</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">신규 · 2026판 공개 08-04 · 공지 09-01 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">🔐⭐</span><span class="name">200+p 위협·통제 총망라</span><span class="code">OWASP AI Exchange</span><span class="org">owaspai.org</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 상시 갱신 문서 · 개별판 없음 [T1]</span></span></div>
+        <div class="chip"><span class="tags">🔐📜⭐</span><span class="name">18도메인·247통제</span><span class="code">CSA AICM v1.1</span><span class="org">STAR for AI 기반</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1" target="_blank" rel="noopener">갱신 · v1.1+AI-CAIQ 06-22 · 243→247통제 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">🔐</span><span class="name">위험 식별·완화 구조도</span><span class="code">CoSAI Risk Map</span><span class="org">OASIS + Google SAIF</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://cloudsecurityalliance.org/press-releases/2026/04/29/csai-foundation-announces-key-milestones-to-secure-the-agentic-control-plane" target="_blank" rel="noopener">갱신 · 에이전틱 거버넌스 마일스톤 04-29 [T1] ↗</a></span></div>
+      </div>
+    </section>
+    <section class="mod m8">
+      <div class="mod-head">
+        <span class="mod-no">07</span>
+        <div>
+          <p class="mod-title">아시아·기타 관할</p>
+          <p class="mod-sub">일본 · 싱가포르 · 영국</p>
+        </div>
+      </div>
+      <div class="chips">
+        <div class="chip"><span class="name">Red Teaming Methodology v1.10</span><span class="code">Japan AISI</span><span class="org">🇯🇵</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · v1.10 유지 · 컴퓨트 임계 의무화 인용(2026) [T1]</span></span></div>
+        <div class="chip"><span class="tags">📜</span><span class="name">자율 거버넌스 테스트</span><span class="code">AI Verify</span><span class="org">🇸🇬 IMDA</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 개정 확인 안 됨 [T1]</span></span></div>
+        <div class="chip"><span class="name">국가 AI 사이버보안 실천규범</span><span class="code">AI Cyber Sec. Code of Practice</span><span class="org">🇬🇧 DSIT+NCSC</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://www.ncsc.gov.uk/blog-post/new-etsi-standard-protects-ai-systems-from-evolving-cyber-threats" target="_blank" rel="noopener">갱신 · ETSI EN 304 223 정합 개정 진행 [T1] ↗</a></span></div>
+      </div>
+    </section>
+    <section class="mod m5">
+      <div class="mod-head">
+        <span class="mod-no">08</span>
+        <div>
+          <p class="mod-title">벤더·기관 프레임워크</p>
+          <p class="mod-sub">클라우드·랩·업계 자율 프레임워크</p>
+        </div>
+      </div>
+      <div class="chips">
+        <div class="chip"><span class="tags">🔐⭐</span><span class="name">Secure AI Framework</span><span class="code">Google SAIF</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 2026 개정 확인 안 됨 [T1]</span></span></div>
+        <div class="chip"><span class="tags">🔐⭐</span><span class="name">13번째 컴포넌트로 에이전틱 AI 추가</span><span class="code">Databricks DASF v3.0</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30" target="_blank" rel="noopener">갱신 · 에이전틱 위험 35건 추가 2026-03 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">🔐</span><span class="name">Responsible AI Standard·PyRIT</span><span class="code">Microsoft</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 개정 확인 안 됨 [T1]</span></span></div>
+        <div class="chip"><span class="tags">🔐</span><span class="name">6영역 실무 가이드라인</span><span class="code">SANS Critical AI Sec. v1.x</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 개정 확인 안 됨 [T1]</span></span></div>
+        <div class="chip"><span class="tags">📜</span><span class="name">최대 44개 AI 특화 요건 추가</span><span class="code">HITRUST AI Assessment</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://hitrustalliance.net/press-releases/hitrust_launches_ai_security_assessment_and_certification" target="_blank" rel="noopener">갱신 · r2/e1/i1 통합 GA · CSF 확장 예정 [T1] ↗</a></span></div>
+        <div class="chip"><span class="name">프론티어 위험 임계·안전조치</span><span class="code">RSP · Preparedness FW · FSF</span><span class="org">Anthropic·OpenAI·DeepMind</span><span class="stat st-stable"><span class="dot"></span><span class="when">안정 · 개별 개정 미확인 [T3]</span></span></div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="foot">
+    <p>각 상자 하단의 상태 점(<b style="color:var(--stat-new)">●</b>갱신/신규 · <b style="color:var(--stat-draft)">●</b>초안 · <b style="color:var(--stat-stable)">●</b>안정)은 그 기준일에 개별 발행기관·소식 페이지를 대조한 결과다. "안정"은 무변동 확정이 아니라 <b>그 기준일에 새 공표·개정을 확인하지 못했다</b>는 뜻 — 발행기관 채널로 정기 재확인 필요.</p>
+    <p>근거: 저장소 <code>분석/03_AI보안_개인정보_규격_컴플라이언스_총람.md</code> + 각 항목 발행기관·전문매체 웹 재확인. <b>갱신/신규·초안</b> 항목만 밑줄 친 링크(↗)가 걸려 있으며, 각 링크는 발행기관 홈이 아니라 해당 공지·보도자료·문서 자체의 직접 URL이다.
+    법령·구속력 있는 규제는 별도 <code>분석/01</code>·일일 AI Security Report §1에서 추적하며 이 보드 본연의 범위 밖이다 — 01 대한민국 모듈의 <b>AI 기본법</b> 항목만 예외로 참고 표기했다(⚖️ 배지).
+    이 보드는 <code>분석/컴플라이언스_데이터.json</code> 에서 자동 생성된다 — 변동 이력의 원본은 그 파일의 git 커밋 로그다.</p>
+  </footer>
+
+</div>
