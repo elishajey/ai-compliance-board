@@ -166,6 +166,17 @@
   .ip-history .h-date { font-family: "IBM Plex Mono", monospace; font-weight: 600; color: var(--ink-soft); margin-right: 8px; }
   .ip-history .h-tier { font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--muted); border: 1px solid var(--line-strong); border-radius: 2px; padding: 0 4px; margin-left: 6px; }
   .sc-new { --sc: var(--stat-new); } .sc-draft { --sc: var(--stat-draft); } .sc-stable { --sc: var(--stat-stable); }
+
+  /* ------- 기업 의견수렴(consultation) 강조 — 색은 --m5(terracotta) 계열 ------- */
+  .chip .consult { display: block; margin-top: 5px; font-family: "IBM Plex Mono", monospace; font-size: 10px; font-weight: 700; color: var(--m5); letter-spacing: .01em; }
+  .consult-box { margin: 22px 0 4px; border: 1px solid var(--m5); border-left: 4px solid var(--m5); border-radius: 4px; background: var(--m5-soft); padding: 14px 16px; }
+  .consult-box h3 { font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--m5); margin: 0 0 8px; }
+  .consult-box ul { list-style: none; margin: 0; padding: 0; }
+  .consult-box li { padding: 5px 0; font-size: .9rem; border-top: 1px dashed var(--line); }
+  .consult-box li:first-child { border-top: none; }
+  .consult-box .c-dday { font-family: "IBM Plex Mono", monospace; font-weight: 700; color: var(--m5); margin-left: 6px; }
+  .ip-consult { border: 1px solid var(--m5); border-left: 4px solid var(--m5); border-radius: 4px; background: var(--m5-soft); padding: 12px 16px; margin: 18px 0 6px; font-size: .95rem; }
+  .ip-consult b { color: var(--m5); }
 </style>
 
 <div class="wrap">
@@ -197,6 +208,14 @@
 
   <p class="board-note">각 기준(상자)을 클릭하면 <b>새 탭</b>에서 상세 페이지(요약 · 전문 · 변동 이력)가 열립니다.</p>
 
+  <div class="consult-box">
+    <h3>🔔 지금 의견수렴 진행 중</h3>
+    <ul>
+      <li><a href="items/kr-ai-basic-decree.html" target="_blank" rel="noopener">🇰🇷 대한민국 — AI 기본법 시행령</a> · 마감일 재확인 필요 · <a href="https://opinion.lawmaking.go.kr" target="_blank" rel="noopener">공고/제출 ↗</a></li>
+      <li><a href="items/kr-ai-basic-notices.html" target="_blank" rel="noopener">🇰🇷 대한민국 — AI 기본법 하위 고시·가이드라인</a> · 마감일 재확인 필요 · <a href="https://www.msit.go.kr/bbs/list.do?sCode=user&amp;mPid=112&amp;mId=113" target="_blank" rel="noopener">공고/제출 ↗</a></li>
+    </ul>
+  </div>
+
   <div class="modgrid">
 
     <section class="mod m6">
@@ -204,13 +223,19 @@
         <span class="mod-no">01</span>
         <div>
           <p class="mod-title">🇰🇷 대한민국</p>
-          <p class="mod-sub">KISA · (예정) ISMS-AI</p>
+          <p class="mod-sub">AI 기본법·시행령·고시·가이드 · 정보보호(과기정통부·KISA·국정원) · 개인정보보호(개인정보위)</p>
         </div>
       </div>
       <div class="chips">
-        <div class="chip"><a class="chip-jump" href="items/kr-kisa-ai-guideline.html" target="_blank" rel="noopener" aria-label="AI 보안 가이드라인 상세 (새 탭)"></a><span class="tags">🔐</span><span class="name">AI 보안 가이드라인</span><span class="code">KISA</span><span class="stat st-new"><span class="dot"></span><span class="when">갱신 · 정오표 반영 재배포 2026-03-13 [T1]</span></span></div>
-        <div class="chip"><a class="chip-jump" href="items/kr-isms-ai.html" target="_blank" rel="noopener" aria-label="ISMS 확장 인증(예정) 상세 (새 탭)"></a><span class="tags">📜</span><span class="name">ISMS 확장 인증(예정)</span><span class="code">ISMS-AI</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 예정 상태 [T2]</span></span></div>
-        <div class="chip"><a class="chip-jump" href="items/kr-ai-basic-act.html" target="_blank" rel="noopener" aria-label="AI 기본법(구속력 있는 법령·참고) 상세 (새 탭)"></a><span class="tags">⚖️</span><span class="name">AI 기본법(구속력 있는 법령·참고)</span><span class="code">법률 제20676호</span><span class="law-note">이 보드 범위 밖 — 상세는 일일 리포트 §1</span><span class="stat st-stable"><span class="dot"></span><span class="when">조문 확인 [T1]</span></span></div>
+        <div class="chip"><a class="chip-jump" href="items/kr-ai-basic-act.html" target="_blank" rel="noopener" aria-label="AI 기본법 상세 (새 탭)"></a><span class="tags">⚖️</span><span class="name">AI 기본법</span><span class="code">법률 제20676호</span><span class="org">과기정통부</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 시행 2026-01-22 · 하위법령 정비 중 [T1]</span></span></div>
+        <div class="chip"><a class="chip-jump" href="items/kr-ai-basic-decree.html" target="_blank" rel="noopener" aria-label="AI 기본법 시행령 상세 (새 탭)"></a><span class="tags">⚖️</span><span class="name">AI 기본법 시행령</span><span class="code">대통령령</span><span class="org">과기정통부</span><span class="stat st-draft"><span class="dot"></span><span class="when">초안·의견수렴 · 제정·개정안 입법예고 — 마감·회차 재확인 필요 [T3]</span></span><span class="consult">🔔 기업 의견수렴</span></div>
+        <div class="chip"><a class="chip-jump" href="items/kr-ai-basic-notices.html" target="_blank" rel="noopener" aria-label="AI 기본법 하위 고시·가이드라인 상세 (새 탭)"></a><span class="tags">⚖️🔐</span><span class="name">AI 기본법 하위 고시·가이드라인</span><span class="code">고시 · 가이드</span><span class="org">과기정통부 · KISA · NIA</span><span class="stat st-draft"><span class="dot"></span><span class="when">초안·의견수렴 · 안전성 확보·고영향 확인·표시 의무 등 고시·가이드 초안 — 재확인 필요 [T3]</span></span><span class="consult">🔔 기업 의견수렴</span></div>
+        <div class="chip"><a class="chip-jump" href="items/kr-kisa-ai-guideline.html" target="_blank" rel="noopener" aria-label="AI 보안 가이드라인 상세 (새 탭)"></a><span class="tags">🔐</span><span class="name">AI 보안 가이드라인</span><span class="code">KISA</span><span class="org">과기정통부·KISA</span><span class="stat st-new"><span class="dot"></span><span class="when">갱신 · 정오표 반영 재배포 2026-03-13 [T1]</span></span></div>
+        <div class="chip"><a class="chip-jump" href="items/kr-mois-kisa-redteam.html" target="_blank" rel="noopener" aria-label="AI 보안 레드팀 가이드 상세 (새 탭)"></a><span class="tags">🔐</span><span class="name">AI 보안 레드팀 가이드</span><span class="code">레드티밍</span><span class="org">과기정통부·KISA</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 개정 확인 안 됨 [T2]</span></span></div>
+        <div class="chip"><a class="chip-jump" href="items/kr-nis-ai-guidebook.html" target="_blank" rel="noopener" aria-label="AI 보안 가이드북 상세 (새 탭)"></a><span class="tags">🔐</span><span class="name">AI 보안 가이드북</span><span class="code">위협 15 · 대응 30</span><span class="org">국가정보원</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 개정 확인 안 됨 [T2]</span></span></div>
+        <div class="chip"><a class="chip-jump" href="items/kr-pipc-ai-public-data.html" target="_blank" rel="noopener" aria-label="공개된 개인정보 처리 안내서 (AI 학습) 상세 (새 탭)"></a><span class="tags">🕵</span><span class="name">공개된 개인정보 처리 안내서 (AI 학습)</span><span class="code">개인정보위</span><span class="org">개인정보보호위원회</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 후속 AI 프라이버시 가이드 지속 발간 [T2]</span></span></div>
+        <div class="chip"><a class="chip-jump" href="items/kr-pipc-automated-decision.html" target="_blank" rel="noopener" aria-label="자동화된 결정에 대한 정보주체 권리 상세 (새 탭)"></a><span class="tags">🕵⚖️</span><span class="name">자동화된 결정에 대한 정보주체 권리</span><span class="code">개인정보보호법 §37의2</span><span class="org">개인정보보호위원회</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 2024-03 시행 · 안내서·해설서 운용 중 [T1]</span></span></div>
+        <div class="chip"><a class="chip-jump" href="items/kr-isms-ai.html" target="_blank" rel="noopener" aria-label="ISMS 확장 인증(예정) 상세 (새 탭)"></a><span class="tags">📜</span><span class="name">ISMS 확장 인증(예정)</span><span class="code">ISMS-AI</span><span class="org">KISA</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 예정 상태 [T2]</span></span></div>
       </div>
     </section>
     <section class="mod m2">

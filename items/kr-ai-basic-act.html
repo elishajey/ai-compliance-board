@@ -166,22 +166,33 @@
   .ip-history .h-date { font-family: "IBM Plex Mono", monospace; font-weight: 600; color: var(--ink-soft); margin-right: 8px; }
   .ip-history .h-tier { font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--muted); border: 1px solid var(--line-strong); border-radius: 2px; padding: 0 4px; margin-left: 6px; }
   .sc-new { --sc: var(--stat-new); } .sc-draft { --sc: var(--stat-draft); } .sc-stable { --sc: var(--stat-stable); }
+
+  /* ------- 기업 의견수렴(consultation) 강조 — 색은 --m5(terracotta) 계열 ------- */
+  .chip .consult { display: block; margin-top: 5px; font-family: "IBM Plex Mono", monospace; font-size: 10px; font-weight: 700; color: var(--m5); letter-spacing: .01em; }
+  .consult-box { margin: 22px 0 4px; border: 1px solid var(--m5); border-left: 4px solid var(--m5); border-radius: 4px; background: var(--m5-soft); padding: 14px 16px; }
+  .consult-box h3 { font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--m5); margin: 0 0 8px; }
+  .consult-box ul { list-style: none; margin: 0; padding: 0; }
+  .consult-box li { padding: 5px 0; font-size: .9rem; border-top: 1px dashed var(--line); }
+  .consult-box li:first-child { border-top: none; }
+  .consult-box .c-dday { font-family: "IBM Plex Mono", monospace; font-weight: 700; color: var(--m5); margin-left: 6px; }
+  .ip-consult { border: 1px solid var(--m5); border-left: 4px solid var(--m5); border-radius: 4px; background: var(--m5-soft); padding: 12px 16px; margin: 18px 0 6px; font-size: .95rem; }
+  .ip-consult b { color: var(--m5); }
 </style>
 
 <div class="wrap item-page sc-stable">
   <a class="back" href="../index.html">← 보드로 돌아가기</a>
   <header class="mast">
     <div class="kicker">01 · 🇰🇷 대한민국</div>
-    <h1>AI 기본법(구속력 있는 법령·참고)</h1>
+    <h1>AI 기본법</h1>
     <div class="ip-meta">
-      <span>법률 제20676호</span>
+      <span>법률 제20676호 · 과기정통부</span>
       <span class="badge">유지</span>
     </div>
   </header>
 
   <section class="ip-sec ip-summary">
     <h2>요약</h2>
-    <p>「인공지능 발전과 신뢰 기반 조성 등에 관한 기본법」. 국내에 실제 구속력이 있는 최초의 종합 AI 법으로, 2025년 1월 21일 공포됐다.</p><p>핵심은 &#x27;고영향 인공지능&#x27;(사람의 생명·신체 안전, 기본권에 중대한 영향을 미치는 영역에 활용되는 AI)과 &#x27;생성형 인공지능&#x27; 사업자에게 부과되는 의무다. 여기에는 위험관리 방안 수립, 이용자에 대한 설명·고지, AI가 생성한 결과물임을 알리는 표시, 안전성·신뢰성 확보 조치, 사업자의 국내 대리인 지정 등이 포함된다. 과학기술정보통신부가 소관 부처이며, 시행령과 하위 고시로 세부 기준이 정해진다.</p><p>이 컴플라이언스 보드는 연성규범(기술표준·프레임워크·가이드) 중심이므로 AI 기본법의 상세 추적은 저장소 `분석/01`과 일일 AI Security Report §1이 담당한다. 여기서는 &#x27;국내에 구속력 있는 AI 법이 존재한다&#x27;는 사실을 보이기 위한 참고 표기(⚖️)만 둔다.</p>
+    <p>「인공지능 발전과 신뢰 기반 조성 등에 관한 기본법」. 국내에 실제 구속력이 있는 최초의 종합 AI 법으로, 2025년 1월 21일 공포됐다.</p><p>핵심은 &#x27;고영향 인공지능&#x27;(사람의 생명·신체 안전, 기본권에 중대한 영향을 미치는 영역에 활용되는 AI)과 &#x27;생성형 인공지능&#x27; 사업자에게 부과되는 의무다. 위험관리 방안 수립, 이용자에 대한 설명·고지, AI가 생성한 결과물임을 알리는 표시, 안전성·신뢰성 확보 조치(대통령령으로 정하는 누적 연산량 기준 이상), 사업자의 국내 대리인 지정 등이 포함된다. 과학기술정보통신부가 소관 부처다.</p><p>법 자체는 골격만 정하고 구체 기준은 시행령·고시·가이드라인에 위임돼 있어, 실무 준수 부담은 아래 하위법령 항목들에서 결정된다. 이 컴플라이언스 보드는 대한민국에 한해 법·시행령·고시·가이드 전 위계를 함께 추적한다(다른 나라는 연성규범만). 일일 AI Security Report §1도 AI 기본법 축을 별도 브리핑한다.</p>
   </section>
   <section class="ip-sec ip-links">
     <h2>전문</h2>
@@ -190,12 +201,13 @@
 
   <section class="ip-sec ip-status">
     <h2>현재 상태</h2>
-    <p><a href="https://www.law.go.kr/lsInfoP.do?lsiSeq=268543" target="_blank" rel="noopener">조문 확인 [T1] ↗</a></p>
+    <p><a href="https://www.law.go.kr/lsInfoP.do?lsiSeq=268543" target="_blank" rel="noopener">유지 · 시행 2026-01-22 · 하위법령 정비 중 [T1] ↗</a></p>
     <p class="ip-checked">마지막 재확인: 2026-09-09</p>
   </section>
   <section class="ip-sec">
     <h2>변동 이력 (최신순 · 누적)</h2>
     <ol class="ip-history">
+      <li><span class="h-date">2026-01-22</span>시행<span class="h-tier">T1</span> <a href="https://www.law.go.kr/lsInfoP.do?lsiSeq=268543" target="_blank" rel="noopener">출처 ↗</a></li>
       <li><span class="h-date">2025-01-21</span>공포 (법률 제20676호)<span class="h-tier">T1</span> <a href="https://www.law.go.kr/lsInfoP.do?lsiSeq=268543" target="_blank" rel="noopener">출처 ↗</a></li>
     </ol>
   </section>
