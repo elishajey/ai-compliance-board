@@ -216,35 +216,35 @@
   .ip-consult b { color: #b0531d; }
 </style>
 
-<div class="wrap item-page sc-stable">
+<div class="wrap item-page sc-new">
   <a class="back" href="../index.html">← 보드로 돌아가기</a>
   <header class="mast">
-    <div class="kicker">04 · 국제 표준화기구</div>
-    <h1>AI 윤리 인증</h1>
+    <div class="kicker">03 · 미국 정부·비영리</div>
+    <h1>모델 증류 캠페인 합동 권고 (AA26-251A)</h1>
     <div class="ip-meta">
-      <span>IEEE CertifAIEd · 제품·전문가</span>
-      <span class="badge">유지</span>
+      <span>AA26-251A · NSA · FBI · CISA</span>
+      <span class="badge">갱신/신규</span>
     </div>
   </header>
 
   <section class="ip-sec ip-summary">
     <h2>요약</h2>
-    <p>IEEE가 운영하는 AI 윤리 인증 프로그램이다. AI 시스템(제품)과 그 평가를 수행하는 사람(전문가) 양쪽에 인증을 제공한다.</p><p>평가는 네 개의 축을 중심으로 한다 — 책임성(accountability, 결과에 대한 책임 소재와 거버넌스), 투명성(transparency, 시스템 동작·한계·데이터 사용의 공개), 알고리즘 편향(algorithmic bias, 유해 편향의 식별·완화), 프라이버시(개인정보 보호와 데이터 거버넌스). 각 축에 대해 성숙도를 평가하는 기준(ontological specification)과 절차가 있으며, 인증받은 평가자가 제3자 심사를 수행한다.</p><p>IEEE 7000 시리즈(윤리적 설계 프로세스, 7001 투명성, 7002 데이터 프라이버시, 7003 편향 등) 표준군과 연계되며, EU AI Act·각국 AI 윤리 가이드와의 매핑도 제공된다. 조달·마케팅에서 &#x27;윤리 검증&#x27;을 대외적으로 입증하려는 조직이 활용한다. 최근 본문 개정은 확인되지 않았다.</p>
+    <p>미국 NSA·FBI·CISA가 2026년 9월 8일 공동 발표한 합동 사이버보안 권고다. 권고 대상이 공격자가 아니라 &#x27;AI 모델을 제공하는 사업자&#x27;라는 점에서, 기존 위협 인텔리전스 문서와 성격이 다르다 — 모델 API의 오남용을 어떻게 탐지하고 어떻게 대응할 것인가를 당국 문서로 처음 명문화했다.</p><p>내용은 중국계 AI 기업 6곳(DeepSeek·Moonshot AI·Alibaba·MiniMax·StepFun·Z.AI)이 2024년 말부터 미국 프론티어 모델(Claude·GPT·Gemini·Grok 변종)을 상대로 산업 규모의 증류(distillation) 캠페인을 벌여, 수백만 건의 요청으로 수십억 토큰 분량의 합성 학습데이터를 추출했다는 것이다. 침투 수단은 취약점 악용이 아니라 이용약관 위반이다 — 네이티브 API, 원격 클라우드 제공자, 그리고 사용자 메타데이터를 자동으로 난독화하는 서드파티 애그리게이터를 섞어 탐지를 회피했다고 서술한다. 권고는 이 증류가 해당 기업들의 AI 개발 전략에서 보조가 아니라 핵심이며, 중국 정부가 이를 인지하고 있을 개연성이 높다고 평가한다.</p><p>권고된 대응이 이례적이다. 고신뢰로 판정된 증류 요청을 차단하지 말고, 이용자에게 알리지 않은 채 응답 품질을 낮추되 그 저하가 측정되지 않도록 변주하라고 제시한다(차단은 공격자에게 탐지 조건을 역산할 단서를 준다는 논리). 함께 제시된 실무 항목은 계정 간 상관된 요청 행위 분석, 애그리게이터 경유 트래픽의 메타데이터 결손 탐지, 특정 지식 영역에 편중된 체계적 질의 패턴 식별이다.</p><p>실무 함의는 두 방향이다. 모델을 &#x27;파는&#x27; 조직에는 API 오남용 탐지가 사실상의 기대 수준이 됐고(연방 조달·계약 실사에서 인용될 여지), 모델을 &#x27;사는&#x27; 조직에는 학습데이터 출처에 대한 계약상 진술·증빙을 요구할 근거가 생겼다. 다만 비고지 품질 저하는 이용약관·표시광고·소비자보호 측면에서 논쟁 소지가 있어 국내 이식 전 법무 검토가 필요하다.</p>
   </section>
   <section class="ip-sec ip-links">
     <h2>전문</h2>
-    <p><a href="https://engagestandards.ieee.org/ieeecertifaied.html" target="_blank" rel="noopener">공식 원문 / 사양 페이지 ↗</a></p>
+    <p><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a" target="_blank" rel="noopener">공식 원문 / 사양 페이지 ↗</a></p>
   </section>
 
   <section class="ip-sec ip-status">
     <h2>현재 상태</h2>
-    <p>유지 · 개정 확인 안 됨 [T1]</p>
+    <p><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a" target="_blank" rel="noopener">신규 · NSA·FBI·CISA 합동 권고 발표 2026-09-08 — 모델 API 오남용 탐지를 제공자 대상 권고로 처음 명문화 [T2] ↗</a></p>
     <p class="ip-checked">마지막 재확인: 2026-09-10</p>
   </section>
   <section class="ip-sec">
     <h2>변동 이력 (최신순 · 누적)</h2>
     <ol class="ip-history">
-      <li><span class="h-date">2022</span>프로그램 출범<span class="h-tier">T2</span></li>
+      <li><span class="h-date">2026-09-08</span>NSA·FBI·CISA 합동 권고 AA26-251A 발표 — 중국계 AI 기업 6곳의 산업 규모 모델 증류 캠페인, 제공자 대상 탐지·대응 권고<span class="h-tier">T2</span> <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a" target="_blank" rel="noopener">출처 ↗</a></li>
     </ol>
   </section>
 

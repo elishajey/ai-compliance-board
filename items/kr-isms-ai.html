@@ -119,11 +119,6 @@
   .st-draft .dot { background: var(--stat-draft); } .st-draft .lbl { color: var(--stat-draft); }
   .st-stable .dot { background: var(--stat-stable); } .st-stable .lbl { color: var(--stat-stable); }
 
-  /* 변화(신규/갱신·초안) 있는 항목은 칩 배경 자체를 모듈 색상에서 상태색 쪽으로 살짝
-     밀어 표현한다 — 모듈 고유색(--mc-soft/--mc-line)과 섞어 튀지 않게. 유지(stable)는 그대로. */
-  .chip:has(.st-new) { background: color-mix(in srgb, var(--mc-soft) 78%, var(--stat-new) 22%); border-color: color-mix(in srgb, var(--mc-line) 60%, var(--stat-new) 40%); }
-  .chip:has(.st-draft) { background: color-mix(in srgb, var(--mc-soft) 78%, var(--stat-draft) 22%); border-color: color-mix(in srgb, var(--mc-line) 60%, var(--stat-draft) 40%); }
-
   .m1 { --mc: var(--m1); --mc-soft: var(--m1-soft); --mc-line: var(--m1-line); }
   .m2 { --mc: var(--m2); --mc-soft: var(--m2-soft); --mc-line: var(--m2-line); }
   .m3 { --mc: var(--m3); --mc-soft: var(--m3-soft); --mc-line: var(--m3-line); }
@@ -221,14 +216,14 @@
   .ip-consult b { color: #b0531d; }
 </style>
 
-<div class="wrap item-page sc-stable">
+<div class="wrap item-page sc-draft">
   <a class="back" href="../index.html">← 보드로 돌아가기</a>
   <header class="mast">
     <div class="kicker">01 · 🇰🇷 대한민국</div>
     <h1>ISMS 확장 인증(예정)</h1>
     <div class="ip-meta">
       <span>ISMS-AI · KISA</span>
-      <span class="badge">유지</span>
+      <span class="badge">초안/의견수렴</span>
     </div>
   </header>
 
@@ -243,13 +238,14 @@
 
   <section class="ip-sec ip-status">
     <h2>현재 상태</h2>
-    <p>유지 · 예정 상태 [T2]</p>
-    <p class="ip-checked">마지막 재확인: 2026-09-09</p>
+    <p><a href="https://byline.network/2025/12/8-391/" target="_blank" rel="noopener">초안 · ISMS-P 전면 개편(3단계 차등 인증) 발표 2025-12 · 고시 개정 2026 1분기 예정 · AI 확장 기준 미공개 [T2] ↗</a></p>
+    <p class="ip-checked">마지막 재확인: 2026-09-10</p>
   </section>
   <section class="ip-sec">
     <h2>변동 이력 (최신순 · 누적)</h2>
     <ol class="ip-history">
       <li><span class="h-date">2026-09-04</span>보드 최초 등재 — 예정 단계<span class="h-tier">T2</span></li>
+      <li><span class="h-date">2025-12</span>과기정통부·개인정보위, ISMS-P 인증 전면 개편 발표 — &#x27;간편·표준·강화&#x27; 3단계 차등 인증 전환, 심사원 대상 AI 등 신기술 교육 확대, 2026년 1분기 고시 개정·공표 후 단계적 시행 예정. AI 확장 트랙 자체의 고시·심사기준은 여전히 미공개<span class="h-tier">T2</span> <a href="https://byline.network/2025/12/8-391/" target="_blank" rel="noopener">출처 ↗</a></li>
     </ol>
   </section>
 

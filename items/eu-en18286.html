@@ -119,11 +119,6 @@
   .st-draft .dot { background: var(--stat-draft); } .st-draft .lbl { color: var(--stat-draft); }
   .st-stable .dot { background: var(--stat-stable); } .st-stable .lbl { color: var(--stat-stable); }
 
-  /* 변화(신규/갱신·초안) 있는 항목은 칩 배경 자체를 모듈 색상에서 상태색 쪽으로 살짝
-     밀어 표현한다 — 모듈 고유색(--mc-soft/--mc-line)과 섞어 튀지 않게. 유지(stable)는 그대로. */
-  .chip:has(.st-new) { background: color-mix(in srgb, var(--mc-soft) 78%, var(--stat-new) 22%); border-color: color-mix(in srgb, var(--mc-line) 60%, var(--stat-new) 40%); }
-  .chip:has(.st-draft) { background: color-mix(in srgb, var(--mc-soft) 78%, var(--stat-draft) 22%); border-color: color-mix(in srgb, var(--mc-line) 60%, var(--stat-draft) 40%); }
-
   .m1 { --mc: var(--m1); --mc-soft: var(--m1-soft); --mc-line: var(--m1-line); }
   .m2 { --mc: var(--m2); --mc-soft: var(--m2-soft); --mc-line: var(--m2-line); }
   .m3 { --mc: var(--m3); --mc-soft: var(--m3-soft); --mc-line: var(--m3-line); }

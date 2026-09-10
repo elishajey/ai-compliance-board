@@ -119,11 +119,6 @@
   .st-draft .dot { background: var(--stat-draft); } .st-draft .lbl { color: var(--stat-draft); }
   .st-stable .dot { background: var(--stat-stable); } .st-stable .lbl { color: var(--stat-stable); }
 
-  /* 변화(신규/갱신·초안) 있는 항목은 칩 배경 자체를 모듈 색상에서 상태색 쪽으로 살짝
-     밀어 표현한다 — 모듈 고유색(--mc-soft/--mc-line)과 섞어 튀지 않게. 유지(stable)는 그대로. */
-  .chip:has(.st-new) { background: color-mix(in srgb, var(--mc-soft) 78%, var(--stat-new) 22%); border-color: color-mix(in srgb, var(--mc-line) 60%, var(--stat-new) 40%); }
-  .chip:has(.st-draft) { background: color-mix(in srgb, var(--mc-soft) 78%, var(--stat-draft) 22%); border-color: color-mix(in srgb, var(--mc-line) 60%, var(--stat-draft) 40%); }
-
   .m1 { --mc: var(--m1); --mc-soft: var(--m1-soft); --mc-line: var(--m1-line); }
   .m2 { --mc: var(--m2); --mc-soft: var(--m2-soft); --mc-line: var(--m2-line); }
   .m3 { --mc: var(--m3); --mc-soft: var(--m3-soft); --mc-line: var(--m3-line); }
@@ -221,14 +216,14 @@
   .ip-consult b { color: #b0531d; }
 </style>
 
-<div class="wrap item-page sc-stable">
+<div class="wrap item-page sc-new">
   <a class="back" href="../index.html">← 보드로 돌아가기</a>
   <header class="mast">
     <div class="kicker">01 · 🇰🇷 대한민국</div>
     <h1>공개된 개인정보 처리 안내서 (AI 학습)</h1>
     <div class="ip-meta">
       <span>개인정보위 · 개인정보보호위원회</span>
-      <span class="badge">유지</span>
+      <span class="badge">갱신/신규</span>
     </div>
   </header>
 
@@ -243,12 +238,13 @@
 
   <section class="ip-sec ip-status">
     <h2>현재 상태</h2>
-    <p><a href="https://www.privacy.go.kr/front/bbs/bbsView.do?bbsNo=BBSMSTR_000000000049&amp;bbscttNo=20731" target="_blank" rel="noopener">유지 · 공개된 개인정보 안내서 2024-07-17 · 후속 생성형 AI 안내서 2025-08 [T1] ↗</a></p>
-    <p class="ip-checked">마지막 재확인: 2026-09-09</p>
+    <p><a href="https://byline.network/2026/05/19-618/" target="_blank" rel="noopener">갱신 · 이용자용 「생성형 AI 서비스 이용자를 위한 개인정보 보호 가이드」 발간 2026-05 [T2] ↗</a></p>
+    <p class="ip-checked">마지막 재확인: 2026-09-10</p>
   </section>
   <section class="ip-sec">
     <h2>변동 이력 (최신순 · 누적)</h2>
     <ol class="ip-history">
+      <li><span class="h-date">2026-05</span>「생성형 AI 서비스 이용자를 위한 개인정보 보호 가이드」 발간 — 개발자·사업자용 안내서와 달리 이용자 관점(민원·상담 사례 기반)<span class="h-tier">T2</span> <a href="https://byline.network/2026/05/19-618/" target="_blank" rel="noopener">출처 ↗</a></li>
       <li><span class="h-date">2025-08</span>후속 「생성형 AI 개발·활용을 위한 개인정보 처리 안내서」 발간<span class="h-tier">T1</span> <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardList.do?bbsId=BS074&amp;mCode=C020010000" target="_blank" rel="noopener">출처 ↗</a></li>
       <li><span class="h-date">2024-07-17</span>「AI 개발·서비스를 위한 공개된 개인정보 처리 안내서」 발간<span class="h-tier">T1</span> <a href="https://www.privacy.go.kr/front/bbs/bbsView.do?bbsNo=BBSMSTR_000000000049&amp;bbscttNo=20731" target="_blank" rel="noopener">출처 ↗</a></li>
     </ol>

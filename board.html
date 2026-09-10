@@ -118,11 +118,6 @@
   .st-draft .dot { background: var(--stat-draft); } .st-draft .lbl { color: var(--stat-draft); }
   .st-stable .dot { background: var(--stat-stable); } .st-stable .lbl { color: var(--stat-stable); }
 
-  /* 변화(신규/갱신·초안) 있는 항목은 칩 배경 자체를 모듈 색상에서 상태색 쪽으로 살짝
-     밀어 표현한다 — 모듈 고유색(--mc-soft/--mc-line)과 섞어 튀지 않게. 유지(stable)는 그대로. */
-  .chip:has(.st-new) { background: color-mix(in srgb, var(--mc-soft) 78%, var(--stat-new) 22%); border-color: color-mix(in srgb, var(--mc-line) 60%, var(--stat-new) 40%); }
-  .chip:has(.st-draft) { background: color-mix(in srgb, var(--mc-soft) 78%, var(--stat-draft) 22%); border-color: color-mix(in srgb, var(--mc-line) 60%, var(--stat-draft) 40%); }
-
   .m1 { --mc: var(--m1); --mc-soft: var(--m1-soft); --mc-line: var(--m1-line); }
   .m2 { --mc: var(--m2); --mc-soft: var(--m2-soft); --mc-line: var(--m2-line); }
   .m3 { --mc: var(--m3); --mc-soft: var(--m3-soft); --mc-line: var(--m3-line); }
@@ -224,23 +219,25 @@
 
   <header class="mast">
     <div class="kicker">Compliance Registry</div>
-    <h1>[2026.09.09] AI 보안 컴플라이언스 모니터링 보드</h1>
+    <h1>[2026.09.10] AI 보안 컴플라이언스 모니터링 보드</h1>
     <div class="legend">
       <span><b>⭐</b> 사실상 표준</span>
       <span><b>🔐</b> 보안 특화</span>
       <span><b>🕵</b> 개인정보 특화</span>
       <span><b>📜</b> 인증·감사 가능</span>
       <span><b>⚖️</b> 구속력 있는 법령(참고 표기 — 이 보드 본연의 범위 밖)</span>
+      <span>모듈 번호 = 게재 순서 · 국가 우선순위 한국→유럽→미국 적용</span>
     </div>
     <div class="legend" style="margin-top:4px;">
       <span><b>T1</b> 원문·공식(발행기관 자체 사이트)</span>
       <span><b>T2</b> 공신력 2차(추적 서비스·집계 매체 등 비공식 경로로 확인)</span>
-      <span><b>T3</b> 재확인 필요(직접 링크 없이 서술만)</span>
+      <span><b>T3</b> 미확인·재확인 필요(직접 링크 없이 서술만)</span>
+      <span>등급은 각 상태 [T1/T2/T3]로 표기</span>
     </div>
     <div class="legend" style="margin-top:8px;">
       <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--stat-new);display:inline-block;"></span><b style="color:var(--stat-new)">갱신/신규</b> 최근 확인된 공표·개정·발행</span>
       <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--stat-draft);display:inline-block;"></span><b style="color:var(--stat-draft)">초안/의견수렴</b> 확정 전 단계</span>
-      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--stat-stable);display:inline-block;"></span><b style="color:var(--stat-stable)">유지</b> — 확인된 변동 없음</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--stat-stable);display:inline-block;"></span><b style="color:var(--stat-stable)">유지</b> 정기 채널만 — 확인된 변동 없음</span>
     </div>
     <p class="byline">reported by elishaJEY</p>
   </header>
@@ -264,9 +261,9 @@
         <div class="chip"><span class="tags">🔐</span><span class="name">AI 보안 가이드라인</span><span class="code">KISA</span><span class="org">과기정통부·KISA</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://www.kisa.or.kr/2060204/form?postSeq=19&amp;page=1" target="_blank" rel="noopener">갱신 · 정오표 반영 재배포 2026-03-13 [T1] ↗</a></span></div>
         <div class="chip"><span class="tags">🔐</span><span class="name">AI 보안 레드팀 가이드</span><span class="code">레드티밍</span><span class="org">과기정통부·KISA</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://www.boannews.com/media/view.asp?idx=144567" target="_blank" rel="noopener">신규 · 「AI 보안 레드티밍 가이드」 발간 2026-07-08 (AI 보안 가이드 2종 중 하나) [T1] ↗</a></span></div>
         <div class="chip"><span class="tags">🔐</span><span class="name">AI 보안 가이드북</span><span class="code">위협 15 · 대응 30</span><span class="org">국가정보원</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 「국가·공공기관 AI 보안 가이드북」 발간 2025-12-10 · 위협 15·대응 30 [T1]</span></span></div>
-        <div class="chip"><span class="tags">🕵</span><span class="name">공개된 개인정보 처리 안내서 (AI 학습)</span><span class="code">개인정보위</span><span class="org">개인정보보호위원회</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 공개된 개인정보 안내서 2024-07-17 · 후속 생성형 AI 안내서 2025-08 [T1]</span></span></div>
+        <div class="chip"><span class="tags">🕵</span><span class="name">공개된 개인정보 처리 안내서 (AI 학습)</span><span class="code">개인정보위</span><span class="org">개인정보보호위원회</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://byline.network/2026/05/19-618/" target="_blank" rel="noopener">갱신 · 이용자용 「생성형 AI 서비스 이용자를 위한 개인정보 보호 가이드」 발간 2026-05 [T2] ↗</a></span></div>
         <div class="chip"><span class="tags">🕵⚖️</span><span class="name">자동화된 결정에 대한 정보주체 권리</span><span class="code">개인정보보호법 §37의2</span><span class="org">개인정보보호위원회</span><span class="stat st-stable"><span class="dot"></span><a class="when" href="https://www.law.go.kr/lsInfoP.do?lsiSeq=258823" target="_blank" rel="noopener">유지 · 2024-03-15 시행 · 권리 안내서 2024-09 운용 중 [T1] ↗</a></span></div>
-        <div class="chip"><span class="tags">📜</span><span class="name">ISMS 확장 인증(예정)</span><span class="code">ISMS-AI</span><span class="org">KISA</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 예정 상태 [T2]</span></span></div>
+        <div class="chip"><span class="tags">📜</span><span class="name">ISMS 확장 인증(예정)</span><span class="code">ISMS-AI</span><span class="org">KISA</span><span class="stat st-draft"><span class="dot"></span><a class="when" href="https://byline.network/2025/12/8-391/" target="_blank" rel="noopener">초안 · ISMS-P 전면 개편(3단계 차등 인증) 발표 2025-12 · 고시 개정 2026 1분기 예정 · AI 확장 기준 미공개 [T2] ↗</a></span></div>
       </div>
     </section>
     <section class="mod m2">
@@ -305,6 +302,7 @@
         <div class="chip"><span class="tags">🔐</span><span class="name">AI 시스템 보안 통제 오버레이</span><span class="code">SP 800-53 COSAiS</span><span class="org">NIST</span><span class="stat st-draft"><span class="dot"></span><a class="when" href="https://csrc.nist.gov/Projects/cosais/publications" target="_blank" rel="noopener">초안 · 예측형 AI 편 주석초안 2026-01-08 · 공개초안 대기 [T1] ↗</a></span></div>
         <div class="chip"><span class="tags">🔐</span><span class="name">AI 데이터센터 보안 분석(HPC 접근)</span><span class="code">SP 800-239</span><span class="org">NIST</span><span class="stat st-draft"><span class="dot"></span><a class="when" href="https://csrc.nist.gov/pubs/sp/800/239/ipd" target="_blank" rel="noopener">초안 · 공개초안 의견수렴 09-25 마감 [T1] ↗</a></span></div>
         <div class="chip"><span class="tags">🔐⭐</span><span class="name">Careful Adoption of Agentic AI Services</span><span class="code">2026-05</span><span class="org">CISA+NSA+Five Eyes</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://www.cisa.gov/resources-tools/resources/careful-adoption-agentic-ai-services" target="_blank" rel="noopener">신규 · 6개국 공동 최초 에이전틱 AI 보안 지침 [T1] ↗</a></span></div>
+        <div class="chip"><span class="tags">🔐⭐</span><span class="name">모델 증류 캠페인 합동 권고 (AA26-251A)</span><span class="code">AA26-251A</span><span class="org">NSA · FBI · CISA</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a" target="_blank" rel="noopener">신규 · NSA·FBI·CISA 합동 권고 발표 2026-09-08 — 모델 API 오남용 탐지를 제공자 대상 권고로 처음 명문화 [T2] ↗</a></span></div>
         <div class="chip"><span class="tags">⭐🔐</span><span class="name">Secure AI System Dev Guidelines</span><span class="code">2023-11</span><span class="org">CISA+NCSC 23개국</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 개정 확인 안 됨 [T1]</span></span></div>
         <div class="chip"><span class="tags">🔐</span><span class="name">Deploying AI Systems Securely</span><span class="code">CSI 2024-04</span><span class="org">NSA AISC+CISA+FBI</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 개정 확인 안 됨 [T1]</span></span></div>
       </div>
@@ -322,7 +320,7 @@
         <div class="chip"><span class="tags">⭐</span><span class="name">AI 위험관리 지침</span><span class="code">ISO/IEC 23894</span><span class="org">ISO 31000의 AI판</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 2023 기준판 [T1]</span></span></div>
         <div class="chip"><span class="tags">🔐</span><span class="name">AI 보안 위협·통제</span><span class="code">ISO/IEC 27090</span><span class="org">개발 중</span><span class="stat st-draft"><span class="dot"></span><a class="when" href="https://www.iso.org/standard/56581.html" target="_blank" rel="noopener">초안 · FDIS 투표 08-19 마감 · 발행 대기 [T1] ↗</a></span></div>
         <div class="chip"><span class="tags">🕵</span><span class="name">AI 프라이버시 보호</span><span class="code">ISO/IEC 27091</span><span class="org">DIS 2025</span><span class="stat st-draft"><span class="dot"></span><a class="when" href="https://www.iso.org/standard/56582.html" target="_blank" rel="noopener">초안 · FDIS 최종안 07-13 · 발행 단계 진입 · 2026년 말 발행 전망 [T2] ↗</a></span></div>
-        <div class="chip"><span class="tags">🕵📜</span><span class="name">개인정보 경영시스템(PIMS)</span><span class="code">ISO/IEC 27701</span><span class="org">인증 가능</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 2019판 · 개정 검토 중 [T3]</span></span></div>
+        <div class="chip"><span class="tags">🕵📜</span><span class="name">개인정보 경영시스템(PIMS)</span><span class="code">ISO/IEC 27701</span><span class="org">인증 가능</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://www.iso.org/standard/27701" target="_blank" rel="noopener">갱신 · 2025판 발행 2025-10-14 — 독립 표준으로 전면 개정, 2019판 대체 [T1] ↗</a></span></div>
         <div class="chip"><span class="tags">📜</span><span class="name">AI 윤리 인증</span><span class="code">IEEE CertifAIEd</span><span class="org">제품·전문가</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 개정 확인 안 됨 [T1]</span></span></div>
       </div>
     </section>
@@ -337,7 +335,7 @@
       <div class="chips">
         <div class="chip"><span class="tags">📜</span><span class="name">최초의 법적 구속력 국제 AI 조약</span><span class="code">Framework Convention on AI (CETS 225)</span><span class="org">Council of Europe</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://www.coe.int/en/web/artificial-intelligence/-/european-union-ratifies-the-council-of-europe-framework-convention-on-artificial-intelligence" target="_blank" rel="noopener">갱신 · EU 비준서 기탁 2026-05-15(최초 당사국) · 협약 발효는 5개국 비준 요건 대기 [T1] ↗</a></span></div>
         <div class="chip"><span class="tags">⭐</span><span class="name">각국 정책 공통 기준</span><span class="code">OECD AI Principles</span><span class="org">OECD.AI</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 2024 개정판 [T1]</span></span></div>
-        <div class="chip"><span class="name">연 1회 과학적 위험 평가</span><span class="code">International AI Safety Report</span><span class="org">30개국+ (Bengio 의장)</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 차기판 시점 미확인 [T3]</span></span></div>
+        <div class="chip"><span class="name">연 1회 과학적 위험 평가</span><span class="code">International AI Safety Report</span><span class="org">30개국+ (Bengio 의장)</span><span class="stat st-new"><span class="dot"></span><a class="when" href="https://internationalaisafetyreport.org/publications" target="_blank" rel="noopener">갱신 · 2026년판(제2차 정식판) 발행 2026-02-03 [T2] ↗</a></span></div>
         <div class="chip"><span class="name">자율 보고체계·행동강령</span><span class="code">Hiroshima AI Process</span><span class="org">G7 / OECD</span><span class="stat st-stable"><span class="dot"></span><span class="when">유지 · 개정 확인 안 됨 [T3]</span></span></div>
       </div>
     </section>

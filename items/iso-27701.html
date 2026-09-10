@@ -119,11 +119,6 @@
   .st-draft .dot { background: var(--stat-draft); } .st-draft .lbl { color: var(--stat-draft); }
   .st-stable .dot { background: var(--stat-stable); } .st-stable .lbl { color: var(--stat-stable); }
 
-  /* 변화(신규/갱신·초안) 있는 항목은 칩 배경 자체를 모듈 색상에서 상태색 쪽으로 살짝
-     밀어 표현한다 — 모듈 고유색(--mc-soft/--mc-line)과 섞어 튀지 않게. 유지(stable)는 그대로. */
-  .chip:has(.st-new) { background: color-mix(in srgb, var(--mc-soft) 78%, var(--stat-new) 22%); border-color: color-mix(in srgb, var(--mc-line) 60%, var(--stat-new) 40%); }
-  .chip:has(.st-draft) { background: color-mix(in srgb, var(--mc-soft) 78%, var(--stat-draft) 22%); border-color: color-mix(in srgb, var(--mc-line) 60%, var(--stat-draft) 40%); }
-
   .m1 { --mc: var(--m1); --mc-soft: var(--m1-soft); --mc-line: var(--m1-line); }
   .m2 { --mc: var(--m2); --mc-soft: var(--m2-soft); --mc-line: var(--m2-line); }
   .m3 { --mc: var(--m3); --mc-soft: var(--m3-soft); --mc-line: var(--m3-line); }
@@ -221,14 +216,14 @@
   .ip-consult b { color: #b0531d; }
 </style>
 
-<div class="wrap item-page sc-stable">
+<div class="wrap item-page sc-new">
   <a class="back" href="../index.html">← 보드로 돌아가기</a>
   <header class="mast">
     <div class="kicker">04 · 국제 표준화기구</div>
     <h1>개인정보 경영시스템(PIMS)</h1>
     <div class="ip-meta">
       <span>ISO/IEC 27701 · 인증 가능</span>
-      <span class="badge">유지</span>
+      <span class="badge">갱신/신규</span>
     </div>
   </header>
 
@@ -243,12 +238,13 @@
 
   <section class="ip-sec ip-status">
     <h2>현재 상태</h2>
-    <p>유지 · 2019판 · 개정 검토 중 [T3]</p>
-    <p class="ip-checked">마지막 재확인: 2026-09-09</p>
+    <p><a href="https://www.iso.org/standard/27701" target="_blank" rel="noopener">갱신 · 2025판 발행 2025-10-14 — 독립 표준으로 전면 개정, 2019판 대체 [T1] ↗</a></p>
+    <p class="ip-checked">마지막 재확인: 2026-09-10</p>
   </section>
   <section class="ip-sec">
     <h2>변동 이력 (최신순 · 누적)</h2>
     <ol class="ip-history">
+      <li><span class="h-date">2025-10-14</span>ISO/IEC 27701:2025 발행 — 27001/27002 확장(extension)에서 독립 관리체계 표준으로 전면 개정, 2019판 대체. 27001 없이도 단독 인증 가능<span class="h-tier">T1</span> <a href="https://www.iso.org/standard/27701" target="_blank" rel="noopener">출처 ↗</a></li>
       <li><span class="h-date">2019-08</span>발행<span class="h-tier">T1</span> <a href="https://www.iso.org/standard/71670.html" target="_blank" rel="noopener">출처 ↗</a></li>
     </ol>
   </section>
