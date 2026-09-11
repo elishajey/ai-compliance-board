@@ -221,35 +221,35 @@
   .ip-consult b { color: #b0531d; }
 </style>
 
-<div class="wrap item-page sc-draft">
+<div class="wrap item-page sc-new">
   <a class="back" href="../index.html">← 보드로 돌아가기</a>
   <header class="mast">
-    <div class="kicker">05 · 미국 정부·비영리</div>
-    <h1>AI 데이터센터 보안 분석(HPC 접근)</h1>
+    <div class="kicker">03 · 🇰🇷 대한민국</div>
+    <h1>AI 투명성 확보 안내 지침</h1>
     <div class="ip-meta">
-      <span>SP 800-239 · NIST</span>
-      <span class="badge">초안/의견수렴</span>
+      <span>투명성 가이드 · 과기정통부 · TTA</span>
+      <span class="badge">갱신/신규</span>
     </div>
   </header>
 
   <section class="ip-sec ip-summary">
     <h2>요약</h2>
-    <p>NIST가 개발 중인, AI 학습·추론을 떠받치는 고성능 컴퓨팅(HPC)·데이터센터 인프라의 보안 분석 문서다. 모델 자체가 아니라 &#x27;모델이 만들어지고 서비스되는 물리·시스템 환경&#x27;을 대상으로 한다.</p><p>다루는 자산과 위협은: 대규모 GPU·가속기 클러스터와 그 스케줄러·오케스트레이션 계층, 고속 인터커넥트와 스토리지, 학습데이터 레이크와 체크포인트, 완성된 모델 가중치(고가치 지식재산이자 유출 표적), 멀티테넌트 환경에서의 격리, 공급망(하드웨어·펌웨어·컨테이너 이미지), 물리 보안과 전력·냉각 가용성 등이다.</p><p>전통적인 HPC 보안 관행에 AI 특유의 고려 — 모델 가중치 유출 방지, 학습 잡(job) 무결성, 대규모 자원의 오·남용 탐지 — 를 더하는 형태다. 공개초안(ipd)이 나와 2026년 9월 25일 의견수렴이 마감된다.</p>
+    <p>과학기술정보통신부가 AI 기본법 제31조(투명성 확보 의무)의 구체적 이행방안을 담아 공개한 안내 지침(가이드라인)이다. AI 기본법 전면 시행일에 맞춰 공개됐고, 과기정통부와 한국정보통신기술협회(TTA) 누리집을 통해 배포된다.</p><p>지침의 핵심은 세 가지다. 첫째, 의무 주체를 &#x27;이용자에게 인공지능 제품·서비스를 직접 제공하는 인공지능사업자&#x27;로 명확히 한정했다 — 모델을 만들었더라도 이용자에게 직접 제공하지 않으면 이 의무의 주체가 아니다. 둘째, 투명성 확보 의무를 두 갈래로 나눠 설명한다 — (1) 고영향 인공지능 또는 생성형 인공지능을 기반으로 운용한다는 사실의 &#x27;사전 고지&#x27;, (2) 산출물이 생성형 인공지능으로 만들어졌다는 사실의 &#x27;표시&#x27;. 셋째, 각 갈래별로 고지·표시의 시점·위치·방식에 관한 이행 예시를 제시한다.</p><p>보안 실무 관점에서 중요한 대목은 &#x27;표시&#x27; 의무다. 표시는 문구를 붙이는 문제로 보이지만 구현은 워터마크·프로비넌스 메타데이터의 생성·유지·위조 저항성 문제이며, EU AI Act 제50조 (2)의 기계판독 마킹 의무와 같은 기술 통제 영역을 공유한다. 따라서 EU 대응과 국내 대응의 구현을 분리하지 않고 하나의 마킹 파이프라인으로 설계하는 것이 유리하다.</p><p>단 과기정통부의 최소 1년 계도기간 방침에 따라 투명성 조항도 그 기간 중에는 사실조사·과태료 부과가 유예된다 — 의무는 존재하지만 제재가 유예된 구간이라는 점을 사내 일정 수립 시 구분해야 한다. 공개일 표기는 출처에 따라 편차가 있어(일부 집계 페이지가 &#x27;25.1.22&#x27;로 표기) 원문 보도자료로 재확인이 필요하다.</p>
   </section>
   <section class="ip-sec ip-links">
     <h2>전문</h2>
-    <p><a href="https://csrc.nist.gov/pubs/sp/800/239/ipd" target="_blank" rel="noopener">공식 원문 / 사양 페이지 ↗</a></p>
+    <p><a href="https://www.msit.go.kr" target="_blank" rel="noopener">공식 원문 / 사양 페이지 ↗</a></p>
   </section>
 
   <section class="ip-sec ip-status">
     <h2>현재 상태</h2>
-    <p><a href="https://csrc.nist.gov/pubs/sp/800/239/ipd" target="_blank" rel="noopener">초안 · 공개초안 의견수렴 09-25 마감 [T1] ↗</a></p>
+    <p><a href="https://eiec.kdi.re.kr/policy/materialView.do?num=276195" target="_blank" rel="noopener">신규 · 「인공지능 투명성 확보 안내 지침」 공개 2026-01-22 · 계도기간 중 제재 유예 [T2] ↗</a></p>
     <p class="ip-checked">마지막 재확인: 2026-09-11</p>
   </section>
   <section class="ip-sec">
     <h2>변동 이력 (최신순 · 누적)</h2>
     <ol class="ip-history">
-      <li><span class="h-date">2026</span>공개초안(ipd) 공개 · 의견수렴 09-25 마감<span class="h-tier">T1</span> <a href="https://csrc.nist.gov/pubs/sp/800/239/ipd" target="_blank" rel="noopener">출처 ↗</a></li>
+      <li><span class="h-date">2026-01-22</span>「인공지능 투명성 확보 안내 지침(가이드라인)」 공개 — 의무 주체를 &#x27;이용자에게 직접 제공하는 인공지능사업자&#x27;로 한정, 사전 고지와 생성물 표시 두 갈래로 이행방안 제시(과기정통부·TTA 배포). 공개일 표기 출처 편차 있음 — 원문 보도자료 재확인 필요<span class="h-tier">T2</span> <a href="https://eiec.kdi.re.kr/policy/materialView.do?num=276195" target="_blank" rel="noopener">출처 ↗</a></li>
     </ol>
   </section>
 
