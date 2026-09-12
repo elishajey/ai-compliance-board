@@ -221,36 +221,35 @@
   .ip-consult b { color: #b0531d; }
 </style>
 
-<div class="wrap item-page sc-stable">
+<div class="wrap item-page sc-new">
   <a class="back" href="../index.html">← 보드로 돌아가기</a>
   <header class="mast">
-    <div class="kicker">03 · 🇰🇷 대한민국</div>
-    <h1>AI 보안 가이드북</h1>
+    <div class="kicker">07 · 오픈소스·커뮤니티</div>
+    <h1>에이전트 런타임 통제 표준</h1>
     <div class="ip-meta">
-      <span>위협 15 · 대응 30 · 국가정보원</span>
-      <span class="badge">유지</span>
+      <span>OWASP ACS · genai.owasp.org</span>
+      <span class="badge">갱신/신규</span>
     </div>
   </header>
 
   <section class="ip-sec ip-summary">
     <h2>요약</h2>
-    <p>국가정보원이 2025년 12월 10일 발간한 「국가·공공기관 AI 보안 가이드북」으로, 15개 위협 유형과 30개 대응방안을 정리한다. 2023년 6월 국정원이 배포한 「챗GPT 등 생성형 AI 서비스 이용 보안 가이드라인」을, 국내 각 분야의 AI 도입 확대와 AI 시스템 대상 위협 증가에 맞춰 전면 개정한 판이다. 공공기관을 1차 대상으로 하나 민간에도 널리 참조된다.</p><p>생성형 AI뿐 아니라 에이전틱 AI, 피지컬 AI(로봇·자율주행 등)까지 포괄해 위협을 분류하고, 각 위협에 대한 기술·관리적 대응책을 제시한다. 실제 AI 시스템 배포 유형을 &#x27;내부업무용 AI의 외부망 연결&#x27; 등 3가지로 구분하고, 유형별 위험 모델과 대응방안, 부록의 AI 시스템 보안 점검표를 담는다. 개정 과정에서 공공기관 300곳의 AI 도입·보안관리 실태조사 결과와 관계기관·학계·산업계 의견을 반영했다.</p><p>국정원의 공공기관 보안 감사·컨설팅에서 AI 도입 시 점검 기준으로 쓰인다.</p>
+    <p>OWASP GenAI Security Project가 2026-09-01 공개한, 자율 AI 에이전트를 런타임에 통제하기 위한 개방 표준이다. 프로젝트의 Agentic Security Initiative(ASI) 문서군 5종 — 위협 분류(Threats &amp; Mitigations), 아키텍처 위협 모델링, 개발자·운영자 보안 통제, Top 10 for Agentic Applications, 그리고 이 ACS — 중에서 &#x27;원칙을 실제 구현으로 옮기는&#x27; 실행 표준 축을 맡는다.</p><p>출발점은 기업이 블랙박스 에이전트를 그대로 받아들일 수 없다는 문제 인식이다. 클라우드·SaaS·온프레미스·엔드포인트에 걸쳐 도는 에이전트에 대해 조직은 네 가지를 알아야 한다 — 이 에이전트가 무엇인지, 무엇에 접근할 수 있는지, 무엇을 했고 왜 그렇게 했는지. ACS는 이를 위해 에이전트가 검사 가능(inspectable)·추적 가능(traceable)·계측 가능(instrumentable)해야 한다고 규정하고, 그 위에 런타임 행위 통제를 얹는다.</p><p>기술적으로는 에이전트 플랫폼이 어떤 방식으로 미들웨어 훅(middleware hook)을 노출해야 하는지와, 그 훅을 통해 안전 정책을 어떻게 강제하는지를 정의한다. 이렇게 하면 통제를 선언적(declarative)으로 기술할 수 있고, 특정 에이전트 프레임워크에 묶이지 않은 채 이식 가능하며, 사전 설정이 아니라 실행 시점에 강제된다. 벤더 제품(런타임 권한 통제·킬스위치 계층)이 각자 다른 방식으로 풀고 있는 문제를 공통 인터페이스로 규격화하려는 시도이며, 에이전트 도입 조직의 조달·평가 기준으로 쓰기에 적합하다.</p>
   </section>
   <section class="ip-sec ip-links">
     <h2>전문</h2>
-    <p><a href="https://www.aikorea.go.kr/web/board/brdDetail.do?menu_cd=000011&amp;num=144" target="_blank" rel="noopener">공식 원문 / 사양 페이지 ↗</a></p>
+    <p><a href="https://genai.owasp.org/resource/agent-control-standard-acs/" target="_blank" rel="noopener">공식 원문 / 사양 페이지 ↗</a></p>
   </section>
 
   <section class="ip-sec ip-status">
     <h2>현재 상태</h2>
-    <p><a href="https://www.aikorea.go.kr/web/board/brdDetail.do?menu_cd=000011&amp;num=144" target="_blank" rel="noopener">유지 · 「국가·공공기관 AI 보안 가이드북」 발간 2025-12-10 · 위협 15·대응 30 [T1] ↗</a></p>
+    <p><a href="https://genai.owasp.org/resource/agent-control-standard-acs/" target="_blank" rel="noopener">신규 · Agent Control Standard 공개 2026-09-01 (Agentic Security Initiative 5종 중 실행 표준 축) [T1] ↗</a></p>
     <p class="ip-checked">마지막 재확인: 2026-09-12</p>
   </section>
   <section class="ip-sec">
     <h2>변동 이력 (최신순 · 누적)</h2>
     <ol class="ip-history">
-      <li><span class="h-date">2025-12-10</span>「국가·공공기관 AI 보안 가이드북」 발간 (전면 개정 · 위협 15·대응 30)<span class="h-tier">T1</span> <a href="https://www.aikorea.go.kr/web/board/brdDetail.do?menu_cd=000011&amp;num=144" target="_blank" rel="noopener">출처 ↗</a></li>
-      <li><span class="h-date">2023-06</span>「챗GPT 등 생성형 AI 서비스 이용 보안 가이드라인」 배포<span class="h-tier">T2</span></li>
+      <li><span class="h-date">2026-09-01</span>Agent Control Standard(ACS) 최초 공개 — 에이전트 플랫폼의 미들웨어 훅 노출 방식과 훅을 통한 안전 정책 강제를 규정, 프레임워크 간 이식 가능한 선언적 런타임 통제<span class="h-tier">T1</span> <a href="https://genai.owasp.org/2026/09/01/owasp-genai-security-project-unveils-2026-top-10-for-llm-applications-new-agent-control-standard-and-sponsors-as-community-tops-30000-members/" target="_blank" rel="noopener">출처 ↗</a></li>
     </ol>
   </section>
 
