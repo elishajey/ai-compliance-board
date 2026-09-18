@@ -264,33 +264,32 @@
 <div class="wrap item-page sc-stable">
   <a class="back" href="../index.html">← 보드로 돌아가기</a>
   <header class="mast">
-    <div class="kicker">03 · 🇰🇷 대한민국</div>
-    <h1>AI 보안 가이드라인</h1>
+    <div class="kicker">07 · 오픈소스·커뮤니티</div>
+    <h1>에이전트 애플리케이션 10대 위험</h1>
     <div class="ip-meta">
-      <span>KISA · 과기정통부·KISA</span>
+      <span>OWASP Agentic Top 10 (ASI01–ASI10) · genai.owasp.org</span>
       <span class="badge">유지</span>
     </div>
   </header>
 
   <section class="ip-sec ip-summary">
     <h2>요약</h2>
-    <p>한국인터넷진흥원(KISA)이 발간한 AI 모델·서비스 대상 사이버위협 대응 안내서다. 법적 구속력은 없지만 국내에서 AI 시스템을 개발·운영하는 기업이 가장 먼저 참조하는 사실상의 보안 기준선 역할을 한다.</p><p>내용은 AI 생명주기(데이터 수집·전처리 → 학습 → 배포 → 운영·폐기)를 축으로, 각 단계별 위협과 대응방안을 정리한다. 다루는 위협 유형은 학습데이터 오염(poisoning)·개인정보 유출, 적대적 예제와 모델 회피, 프롬프트 인젝션과 탈옥, 모델 추출·역공학, 공급망(사전학습 모델·오픈소스 라이브러리·API) 위험 등이다. 각 위협에 대해 점검 항목 형태의 체크리스트와 완화책을 제시한다.</p><p>NIST AI RMF, ISO/IEC 42001, OWASP LLM Top 10, MITRE ATLAS, 영국 NCSC의 안전한 AI 개발 지침 등 해외 주요 프레임워크를 명시적으로 참조·매핑해, 국내 조직이 국제 기준과 정합적으로 대응할 수 있도록 구성했다. 2025년 12월 초판이 배포됐고 2026년 3월 정오표를 반영해 재배포됐다.</p>
+    <p>OWASP GenAI Security Project의 Agentic Security Initiative(ASI) 문서군 가운데 위험 목록 축을 맡는 자료. 2026판이 2025-12-09 공개됐고, 100명 이상의 업계 전문가·연구자·실무자가 참여한 동료검토를 거쳤다.</p><p>대상은 LLM 기반 챗봇이 아니라, 스스로 계획을 세우고 메모리를 유지하며 도구를 호출하고 위임된 권한으로 행동하는 자율 에이전트다. ASI01부터 ASI10까지 10개 위험 범주로 정리되며, 기존 LLM Top 10이 모델 입출력 계층의 위험(프롬프트 주입·출력 처리 등)에 초점을 둔 것과 달리 이 문서는 계획·메모리·도구 호출·권한 위임처럼 에이전트 고유의 구조에서 발생하는 위험을 다룬다.</p><p>같은 ASI 문서군의 다른 자료 — 위협 분류(Threats &amp; Mitigations), 아키텍처 위협 모델링, 개발자·운영자 보안 통제, Agent Control Standard(ACS) — 와 함께 쓰도록 설계돼 있다. 위험 목록(이 문서)이 &#x27;무엇이 문제인가&#x27;를, ACS가 &#x27;런타임에서 어떻게 통제하는가&#x27;를 맡는 구조다. 에이전트 도입 조직의 위협 모델링 체크리스트와 조달 평가 항목으로 직접 쓸 수 있다.</p>
   </section>
   <section class="ip-sec ip-links">
     <h2>전문</h2>
-    <p><a href="https://www.kisa.or.kr/2060204/form?postSeq=19&amp;page=1" target="_blank" rel="noopener">공식 원문 / 사양 페이지 ↗</a></p>
+    <p><a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" rel="noopener">공식 원문 / 사양 페이지 ↗</a></p>
   </section>
 
   <section class="ip-sec ip-status">
     <h2>현재 상태</h2>
-    <p><a href="https://www.kisa.or.kr/2060204/form?postSeq=19&amp;page=1" target="_blank" rel="noopener">유지 · 정오표 반영 재배포 2026-03-13 <sub class="tgrade">[T1]</sub> ↗</a></p>
+    <p><a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" rel="noopener">유지 · 2026판 공개 2025-12-09 · ASI01–ASI10 10개 위험 범주 <sub class="tgrade">[T2]</sub> ↗</a></p>
     <p class="ip-checked">마지막 재확인: 2026-09-19</p>
   </section>
   <section class="ip-sec">
     <h2>변동 이력 (최신순 · 누적)</h2>
     <ol class="ip-history">
-      <li><span class="h-date">2026-03-13</span>정오표 반영 재배포<span class="h-tier">T1</span> <a href="https://www.kisa.or.kr/2060204/form?postSeq=19&amp;page=1" target="_blank" rel="noopener">출처 ↗</a></li>
-      <li><span class="h-date">2025-12</span>초판 배포<span class="h-tier">T2</span></li>
+      <li><span class="h-date">2025-12-09</span>「OWASP Top 10 for Agentic Applications」 2026판 공개 — 계획·메모리·도구 호출·위임된 권한을 가진 자율 에이전트 고유의 위험 10종(ASI01–ASI10)을 분류. 100명 이상 전문가 동료검토<span class="h-tier">T2</span> <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" rel="noopener">출처 ↗</a></li>
     </ol>
   </section>
 
