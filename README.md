@@ -1,4 +1,4 @@
-# AI 보안 컴플라이언스 모니터링 보드
+# AI SEC Compliance Dashboard
 
 NIST · MITRE · OWASP · ISO/IEC 등 AI 보안·프라이버시 규격/프레임워크 40여 종을
 발행 주체별 8개 모듈로 나눠 매일 재확인하는 보드. 각 기준마다 **요약 · 전문 링크 ·
