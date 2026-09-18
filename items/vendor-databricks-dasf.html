@@ -148,8 +148,8 @@
      상자만 흰 배경으로 붕 떴었음). .mod/.chip과 똑같은 CSS 변수를 써서 다크모드가 자동으로
      맞게 한다 — board.html(이메일/아티팩트)은 여전히 인라인 style 버전을 쓴다(변경 없음). ------- */
   .chg-box { background: var(--surface); border: 1px solid var(--line); border-radius: 5px; box-shadow: var(--shadow); overflow: hidden; margin-top: 28px; }
-  .chg-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; padding: 14px 16px 12px; border-bottom: 1px solid var(--line); background: var(--surface-2); border-top: 3px solid var(--ink-soft); }
-  .chg-title { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 1.02rem; }
+  .chg-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; padding: 14px 16px 12px; border-bottom: 1px solid var(--line); background: var(--surface-2); border-top: 3px solid var(--accent); }
+  .chg-title { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 1.02rem; color: var(--accent); }
   .chg-counts { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--muted); }
   .chg-counts .n { color: var(--stat-new); font-weight: 700; }
   .chg-counts .d { color: var(--stat-draft); font-weight: 700; }
