@@ -26,10 +26,10 @@
     --m7: #46525f; --m7-soft: #e3e7eb; --m7-line: #b6c0cb;
     --m8: #a24a63; --m8-soft: #f3dee4; --m8-line: #dcb0bd;
 
-    --stat-new: #2f7a4e;
+    --stat-new: #b4381f;
     --stat-draft: #9a7000;
     --stat-stable: #63707f;
-    --dot-new: #00c853;
+    --dot-new: #ff3b30;
     --dot-draft: #ffd600;
     color-scheme: light;
   }
@@ -50,8 +50,8 @@
       --m7: #a3aeb9; --m7-soft: #232a32; --m7-line: #384049;
       --m8: #d98aa0; --m8-soft: #34202a; --m8-line: #4a2c37;
 
-      --stat-new: #5cae7d; --stat-draft: #d6ab3e; --stat-stable: #8b97a6;
-      --dot-new: #00c853; --dot-draft: #ffd600;
+      --stat-new: #e07a5f; --stat-draft: #d6ab3e; --stat-stable: #8b97a6;
+      --dot-new: #ff453a; --dot-draft: #ffd600;
       color-scheme: dark;
     }
   }
@@ -71,8 +71,8 @@
     --m7: #a3aeb9; --m7-soft: #232a32; --m7-line: #384049;
     --m8: #d98aa0; --m8-soft: #34202a; --m8-line: #4a2c37;
 
-    --stat-new: #5cae7d; --stat-draft: #d6ab3e; --stat-stable: #8b97a6;
-    --dot-new: #00c853; --dot-draft: #ffd600;
+    --stat-new: #e07a5f; --stat-draft: #d6ab3e; --stat-stable: #8b97a6;
+    --dot-new: #ff453a; --dot-draft: #ffd600;
     color-scheme: dark;
   }
 
@@ -142,6 +142,12 @@
   .mod-span2 .chips { flex-wrap: nowrap; overflow-x: auto; }
   .mod-span2 .chip { flex: 1 1 220px; min-width: 200px; }
 
+  /* ------- 모듈 03/05 "더보기"(2026-09-18 — 짝지은 04/06과 높이를 맞추려고 일부만 기본 노출) ------- */
+  .chips-more { padding: 0 16px 14px; }
+  .chips-more > summary { cursor: pointer; font-family: "IBM Plex Mono", monospace; font-size: 11px; font-weight: 600; color: var(--accent); list-style: revert; margin-bottom: 6px; }
+  .chips-more > summary::marker { color: var(--accent); }
+  .chips-more .chips { padding: 0; }
+
   /* ------- "이번 주 변화 요약" 상자 — index.html(웹) 전용 클래스 버전(2026-09-18 사용자
      지적: 인라인 라이트 색만 쓰던 board.html용 버전을 웹에도 그대로 써서 다크모드에서 이
      상자만 흰 배경으로 붕 떴었음). .mod/.chip과 똑같은 CSS 변수를 써서 다크모드가 자동으로
@@ -166,7 +172,7 @@
   .chg-card .badge-new { color: var(--stat-new); border: 1px solid var(--stat-new); }
   .chg-card .badge-draft { color: var(--stat-draft); border: 1px solid var(--stat-draft); }
   .chg-card .line { display: block; margin-top: 6px; padding-top: 5px; border-top: 1px dashed var(--line-strong); font-size: 12px; color: var(--muted); }
-  .chg-card .domain { display: block; margin-top: 4px; font-family: "IBM Plex Mono", monospace; font-size: 10px; font-weight: 600; color: var(--muted); }
+  .chg-card .domain { display: block; margin-top: 4px; font-family: "IBM Plex Mono", monospace; font-size: 10px; font-weight: 600; color: #ffffff; }
   .chg-card .domain span { margin-right: 6px; }
 
   footer.foot { margin-top: 56px; padding-top: 16px; border-top: 2px solid var(--ink); font-size: .8rem; color: var(--muted); }
@@ -284,7 +290,7 @@
   <div style="background:#ffffff;border:1px solid #d5dce3;border-radius:5px;box-shadow:0 1px 2px rgba(24,33,46,.06),0 8px 24px -12px rgba(24,33,46,.18);margin-top:28px;overflow:hidden">
   <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;padding:14px 18px 12px;border-bottom:1px solid #d5dce3;background:#f6f8fa;border-top:3px solid #0d7c86">
     <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:16px;color:#0d7c86">이번 주 변화 요약</span>
-    <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#63707f"><b style="color:#2f7a4e;font-weight:700">갱신/신규 1건</b> · <b style="color:#9a7000;font-weight:700">초안/의견수렴 11건</b></span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#63707f"><b style="color:#b4381f;font-weight:700">갱신/신규 1건</b> · <b style="color:#9a7000;font-weight:700">초안/의견수렴 11건</b></span>
   </div>
   <div style="padding:12px 18px">
     <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#0d7c86;margin:0 0 8px">🇰🇷 대한민국</div>
@@ -297,7 +303,7 @@
   <div style="padding:12px 18px;border-top:1px dashed #d5dce3">
     <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#0d7c86;margin:0 0 8px">주요 국제 표준 (NIST AI · MITRE ATLAS · ISO 42001 · OWASP LLM · AI Exchange)</div>
     <ul style="list-style:none;margin:0;padding:0;">
-      <li style="padding:7px 0;font-size:.88rem"><a href="https://github.com/mitre-atlas/atlas-data/releases" target="_blank" rel="noopener" style="font-weight:600;color:#18212e;text-decoration:none">ATLAS 공격 지식베이스</a><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;border:1px solid #2f7a4e;color:#2f7a4e;border-radius:2px;padding:0 5px;margin-left:6px">갱신/신규</span><span style="display:block;color:#63707f;font-size:.85rem;margin-top:2px">v2026.09 (2026-09-15) · 신규 기법 11종 · 완화 &#x27;AI 허니팟&#x27; 신설 (16전술·120기법·88하위기법·40완화·73사례) <sub class="tgrade">[T1]</sub></span><span style="display:block;margin-top:4px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;color:#63707f">#에이전트보안 #모델보안 </span></li>
+      <li style="padding:7px 0;font-size:.88rem"><a href="https://github.com/mitre-atlas/atlas-data/releases" target="_blank" rel="noopener" style="font-weight:600;color:#18212e;text-decoration:none">ATLAS 공격 지식베이스</a><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;border:1px solid #b4381f;color:#b4381f;border-radius:2px;padding:0 5px;margin-left:6px">갱신/신규</span><span style="display:block;color:#63707f;font-size:.85rem;margin-top:2px">v2026.09 (2026-09-15) · 신규 기법 11종 · 완화 &#x27;AI 허니팟&#x27; 신설 (16전술·120기법·88하위기법·40완화·73사례) <sub class="tgrade">[T1]</sub></span><span style="display:block;margin-top:4px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;color:#63707f">#에이전트보안 #모델보안 </span></li>
     </ul>
   </div>
   <details style="padding:12px 18px;border-top:1px dashed #d5dce3">
