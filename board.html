@@ -142,6 +142,31 @@
   .mod-span2 .chips { flex-wrap: nowrap; overflow-x: auto; }
   .mod-span2 .chip { flex: 1 1 220px; min-width: 200px; }
 
+  /* ------- "이번 주 변화 요약" 상자 — index.html(웹) 전용 클래스 버전(2026-09-18 사용자
+     지적: 인라인 라이트 색만 쓰던 board.html용 버전을 웹에도 그대로 써서 다크모드에서 이
+     상자만 흰 배경으로 붕 떴었음). .mod/.chip과 똑같은 CSS 변수를 써서 다크모드가 자동으로
+     맞게 한다 — board.html(이메일/아티팩트)은 여전히 인라인 style 버전을 쓴다(변경 없음). ------- */
+  .chg-box { background: var(--surface); border: 1px solid var(--line); border-radius: 5px; box-shadow: var(--shadow); overflow: hidden; margin-top: 28px; }
+  .chg-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; padding: 14px 16px 12px; border-bottom: 1px solid var(--line); background: var(--surface-2); border-top: 3px solid var(--ink-soft); }
+  .chg-title { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 1.02rem; }
+  .chg-counts { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--muted); }
+  .chg-counts .n { color: var(--stat-new); font-weight: 700; }
+  .chg-counts .d { color: var(--stat-draft); font-weight: 700; }
+  .chg-tier { padding: 0 0 4px; border-top: 1px solid var(--line); }
+  .chg-tier:first-of-type { border-top: none; }
+  .chg-tier-label { font-family: "IBM Plex Mono", monospace; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; padding: 14px 16px 0; }
+  .chg-tier > summary.chg-tier-label { cursor: pointer; list-style: revert; }
+  .chg-tier > summary.chg-tier-label::marker { color: var(--accent); }
+  .chg-cards { display: flex; flex-direction: column; gap: 8px; padding: 10px 16px 16px; }
+  .chg-empty { color: var(--muted); font-size: .85rem; font-style: italic; margin: 0; padding: 10px 16px 16px; }
+  .chg-card { background: var(--surface-2); border: 1px solid var(--line-strong); border-radius: 4px; padding: 9px 11px 8px; }
+  .chg-card .prefix { display: block; font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--muted); margin-bottom: 2px; }
+  .chg-card .name { font-weight: 600; color: var(--ink); font-size: 13.5px; text-decoration: none; }
+  .chg-card .badge { font-family: "IBM Plex Mono", monospace; font-size: 10px; font-weight: 600; border-radius: 2px; padding: 0 5px; margin-left: 6px; }
+  .chg-card .badge-new { color: var(--stat-new); border: 1px solid var(--stat-new); }
+  .chg-card .badge-draft { color: var(--stat-draft); border: 1px solid var(--stat-draft); }
+  .chg-card .line { display: block; margin-top: 6px; padding-top: 5px; border-top: 1px dashed var(--line-strong); font-size: 12px; color: var(--muted); }
+
   footer.foot { margin-top: 56px; padding-top: 16px; border-top: 2px solid var(--ink); font-size: .8rem; color: var(--muted); }
   footer.foot code { font-family: "IBM Plex Mono", monospace; font-size: .76rem; color: var(--ink-soft); }
   a { color: var(--accent); }
