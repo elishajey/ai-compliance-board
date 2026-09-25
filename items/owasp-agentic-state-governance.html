@@ -264,33 +264,32 @@
 <div class="wrap item-page sc-stable">
   <a class="back" href="../index.html">← 보드로 돌아가기</a>
   <header class="mast">
-    <div class="kicker">03 · 🇰🇷 대한민국</div>
-    <h1>AI 보안 가이드라인</h1>
+    <div class="kicker">07 · 오픈소스·커뮤니티</div>
+    <h1>OWASP State of Agentic AI Security and Governance</h1>
     <div class="ip-meta">
-      <span>KISA · 과기정통부·KISA</span>
+      <span>v2.01 · OWASP GenAI Security Project</span>
       <span class="badge">유지</span>
     </div>
   </header>
 
   <section class="ip-sec ip-summary">
     <h2>요약</h2>
-    <p>한국인터넷진흥원(KISA)이 발간한 AI 모델·서비스 대상 사이버위협 대응 안내서다. 법적 구속력은 없지만 국내에서 AI 시스템을 개발·운영하는 기업이 가장 먼저 참조하는 사실상의 보안 기준선 역할을 한다.</p><p>내용은 AI 생명주기(데이터 수집·전처리 → 학습 → 배포 → 운영·폐기)를 축으로, 각 단계별 위협과 대응방안을 정리한다. 다루는 위협 유형은 학습데이터 오염(poisoning)·개인정보 유출, 적대적 예제와 모델 회피, 프롬프트 인젝션과 탈옥, 모델 추출·역공학, 공급망(사전학습 모델·오픈소스 라이브러리·API) 위험 등이다. 각 위협에 대해 점검 항목 형태의 체크리스트와 완화책을 제시한다.</p><p>NIST AI RMF, ISO/IEC 42001, OWASP LLM Top 10, MITRE ATLAS, 영국 NCSC의 안전한 AI 개발 지침 등 해외 주요 프레임워크를 명시적으로 참조·매핑해, 국내 조직이 국제 기준과 정합적으로 대응할 수 있도록 구성했다. 2025년 12월 초판이 배포됐고 2026년 3월 정오표를 반영해 재배포됐다.</p>
+    <p>OWASP GenAI Security Project가 내는 에이전틱 AI 보안·거버넌스 현황 보고서다. 2025년 7월 초판(v1)에 이어 2026-06-01에 v2.01이 공개됐다.</p><p>v2에서 새로 들어간 축이 엔터프라이즈 도입 성숙도 모델(Enterprise Adoption Maturity Model)이다. 조직이 이미 돌리고 있는 에이전트를 실제로 감독할 수 있는 역량을 거버넌스 성숙도 축으로 점수화하며, 단계는 임시적(ad hoc) 인식 수준에서 텔레메트리 기반의 적응형 통제까지로 구분한다. 즉 &quot;에이전트를 얼마나 잘 쓰는가&quot;가 아니라 &quot;돌아가고 있는 에이전트를 볼 수 있고 멈출 수 있는가&quot;를 등급으로 만든 것이 이 문서의 위치다.</p><p>초판과 달라진 배경은 그 사이 1년 동안 OWASP Top 10 for Agentic Applications(ASI01–ASI10)가 발행되고 확인된 실제 사고 사례가 쌓였다는 점이다. 그래서 v2는 위험 분류(Agentic Top 10)와 실행 통제 규격(Agent Control Standard)이 이미 있는 상태에서, 그 둘을 조직 차원의 성숙도 진단으로 잇는 역할을 한다. 자체 에이전트를 운영하는 조직이 현재 단계를 자가진단하고 다음 단계의 요건을 정하는 용도로 쓸 수 있다.</p><p>문서 성격은 비구속 권고이며 인증 절차는 없다. 원문 게시 페이지를 직접 열지 못해 발행일·버전 표기는 전문매체와 분석기관 보고를 교차 확인한 값이다.</p>
   </section>
   <section class="ip-sec ip-links">
     <h2>전문</h2>
-    <p><a href="https://www.kisa.or.kr/2060204/form?postSeq=19&amp;page=1" target="_blank" rel="noopener">공식 원문 / 사양 페이지 ↗</a></p>
+    <p><a href="https://genai.owasp.org/resources/" target="_blank" rel="noopener">공식 원문 / 사양 페이지 ↗</a></p>
   </section>
 
   <section class="ip-sec ip-status">
     <h2>현재 상태</h2>
-    <p><a href="https://www.kisa.or.kr/2060204/form?postSeq=19&amp;page=1" target="_blank" rel="noopener">유지 · 정오표 반영 재배포 2026-03-13 <sub class="tgrade">[T1]</sub> ↗</a></p>
+    <p><a href="https://www.infosecurity-magazine.com/news/owasp-agentic-ai-security-maturity/" target="_blank" rel="noopener">유지 · v2.01 공개 2026-06-01 · 엔터프라이즈 도입 성숙도 모델 포함 <sub class="tgrade">[T2]</sub> ↗</a></p>
     <p class="ip-checked">마지막 재확인: 2026-09-26</p>
   </section>
   <section class="ip-sec">
     <h2>변동 이력 (최신순 · 누적)</h2>
     <ol class="ip-history">
-      <li><span class="h-date">2026-03-13</span>정오표 반영 재배포<span class="h-tier">T1</span> <a href="https://www.kisa.or.kr/2060204/form?postSeq=19&amp;page=1" target="_blank" rel="noopener">출처 ↗</a></li>
-      <li><span class="h-date">2025-12</span>초판 배포<span class="h-tier">T2</span></li>
+      <li><span class="h-date">2026-06-01</span>「State of Agentic AI Security and Governance」 v2.01 공개 — 2025년 7월 초판의 전면 개정판. 엔터프라이즈 도입 성숙도 모델을 신설해 거버넌스 성숙도를 임시적 인식 수준에서 텔레메트리 기반 적응형 통제까지 단계로 점수화하고, 그 사이 발행된 Agentic Top 10(ASI01–ASI10)과 축적된 실제 사고 사례를 반영했다.<span class="h-tier">T2</span> <a href="https://www.infosecurity-magazine.com/news/owasp-agentic-ai-security-maturity/" target="_blank" rel="noopener">출처 ↗</a></li>
     </ol>
   </section>
 
