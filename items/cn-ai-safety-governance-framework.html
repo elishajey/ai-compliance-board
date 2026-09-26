@@ -261,35 +261,37 @@
   .ip-consult b { color: #b0531d; }
 </style>
 
-<div class="wrap item-page sc-draft">
+<div class="wrap item-page sc-stable">
   <a class="back" href="../index.html">← 보드로 돌아가기</a>
   <header class="mast">
-    <div class="kicker">01 · 국제 표준화기구</div>
-    <h1>AI 보안 위협·통제</h1>
+    <div class="kicker">06 · 아시아·기타 관할</div>
+    <h1>人工智能安全治理框架 (AI Safety Governance Framework)</h1>
     <div class="ip-meta">
-      <span>ISO/IEC 27090 · 개발 중</span>
-      <span class="badge">초안/의견수렴</span>
+      <span>AI 安全治理框架 3.0 · 🇨🇳 全国网络安全标准化技术委员会 (TC260)</span>
+      <span class="badge">유지</span>
     </div>
   </header>
 
   <section class="ip-sec ip-summary">
     <h2>요약</h2>
-    <p>ISO/IEC JTC 1/SC 27(정보보안·사이버보안·프라이버시 보호)이 개발 중인, AI 시스템의 보안 위협과 통제를 다루는 지침 표준이다. 42001·23894가 거버넌스·위험관리라면 27090은 &#x27;보안 그 자체&#x27;에 특화된다.</p><p>다루는 위협은 AI 생명주기 전반에 걸친다 — 학습 단계의 데이터 중독과 백도어, 배포된 모델에 대한 회피·적대적 예제, 모델·학습데이터 추출과 멤버십 추론, 프롬프트 인젝션, 공급망(사전학습 모델·데이터셋·프레임워크) 위협. 각 위협에 대해 설계·구현·운영 단계에서 적용할 통제 — 데이터 검증·출처 관리, 견고성 훈련·평가, 모델 접근통제와 속도 제한, 입출력 필터링, 이상 탐지, 무결성 보증 — 를 제시한다.</p><p>NIST AI 100-2의 분류체계, MITRE ATLAS, OWASP 자료와 정합적으로 설계된다. 2026년 8월 19일 FDIS(최종 국제표준안) 투표가 마감됐고 발행을 대기 중이다. 발행되면 ISO/IEC 27001 정보보안 관리체계에 AI 보안을 통합하는 표준 근거가 된다.</p>
+    <p>중국의 AI 안전 거버넌스를 총괄하는 비구속 프레임워크 문서다. 국가인터넷정보판공실(CAC)의 지도 아래 전국네트워크안전표준화기술위원회(网安标委, TC260)가 중국네트워크공간연구원·CAC 데이터기술보장센터 등 연구기관·산업계와 함께 편제한다.</p><p>버전 계보는 1.0(2024년 9월) → 2.0(2025-09-15) → 3.0(2026-09-14)이다. 3.0은 &quot;위험 분류 · 기술 대응 · 종합 거버넌스&quot;라는 기존 3단 구조를 유지하면서, 위험 분류 체계를 최신 상황에 맞게 갱신하고 기술적 대응 조치와 종합 거버넌스 조치를 조정했다.</p><p>보안 실무에서 볼 지점은 이 문서가 중국 내 AI 서비스 규제(생성형 AI 임시방법, AI 라벨링办法, 인간형 상호작용 서비스 임시방법 등)의 위험 판단 근거로 인용되는 상위 문서라는 점이다. 3.0에서는 특히 오픈소스 생태계 보안과 공급망 보안 관리(오픈소스 모델의 다운로드·사용에 대한 금지 행위 명확화)가 강화된 것으로 보도됐다.</p><p>국내 기업 관점에서는 두 갈래로 걸린다. 첫째, 중국에 AI 서비스를 제공하는 경우 현지 규제 당국이 참조하는 위험 분류 틀이므로 자사 서비스가 어느 범주에 놓이는지 대조가 필요하다. 둘째, 중국계 오픈소스 모델·가중치를 내부에 반입해 쓰는 경우 이 문서가 짚는 공급망 항목이 자사 모델 반입 심사 체크리스트와 어긋나지 않는지 볼 만하다. 이 문서 자체는 법이 아니라 연성규범이며 위반에 따른 직접 제재 조항은 없다.</p>
   </section>
   <section class="ip-sec ip-links">
     <h2>전문</h2>
-    <p><a href="https://www.iso.org/standard/56581.html" target="_blank" rel="noopener">공식 원문 / 사양 페이지 ↗</a></p>
+    <p><a href="https://www.tc260.org.cn/tc260/xwdt1/202609/e879077a3caa4722b2206d1bcaed5a6c.shtml" target="_blank" rel="noopener">공식 원문 / 사양 페이지 ↗</a></p>
   </section>
 
   <section class="ip-sec ip-status">
     <h2>현재 상태</h2>
-    <p><a href="https://www.iso.org/standard/56581.html" target="_blank" rel="noopener">초안 · FDIS 투표 08-19 마감 · 발행 대기 <sub class="tgrade">[T1]</sub> ↗</a></p>
+    <p><a href="https://www.tc260.org.cn/tc260/xwdt1/202609/e879077a3caa4722b2206d1bcaed5a6c.shtml" target="_blank" rel="noopener">유지 · 3.0 발표 2026-09-14(국가 사이버보안 홍보주간 개막식) · 위험분류 갱신·기술대응 조정 <sub class="tgrade">[T1]</sub> ↗</a></p>
     <p class="ip-checked">마지막 재확인: 2026-09-27</p>
   </section>
   <section class="ip-sec">
     <h2>변동 이력 (최신순 · 누적)</h2>
     <ol class="ip-history">
-      <li><span class="h-date">2026-08-19</span>FDIS 투표 마감 · 발행 대기<span class="h-tier">T1</span> <a href="https://www.iso.org/standard/56581.html" target="_blank" rel="noopener">출처 ↗</a></li>
+      <li><span class="h-date">2026-09-14</span>3.0 발표 — 2026년 국가 사이버보안 홍보주간 개막식에서 网安标委(TC260)가 공개. 「위험 분류·기술 대응·종합 거버넌스」 핵심 논리를 유지하되 위험 분류를 갱신하고 기술 대응·종합 거버넌스 조치를 조정. 오픈소스 생태계 보안과 공급망 보안 관리(오픈소스 모델 다운로드·사용 관련 금지 행위 명확화) 강화가 함께 보도됨<span class="h-tier">T1</span> <a href="https://www.cac.gov.cn/2026-09/14/c_1791137092283345.htm" target="_blank" rel="noopener">출처 ↗</a></li>
+      <li><span class="h-date">2025-09-15</span>2.0 발표 — 위험 분류 및 대응 조치 개정판 공개<span class="h-tier">T1</span> <a href="https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf" target="_blank" rel="noopener">출처 ↗</a></li>
+      <li><span class="h-date">2024-09</span>「人工智能安全治理框架」1.0 발표 — 위험 분류·기술 대응·종합 거버넌스 3단 구조 확립<span class="h-tier">T1</span> <a href="https://www.tc260.org.cn/upload/2024-09-09/1725849142029046390.pdf" target="_blank" rel="noopener">출처 ↗</a></li>
     </ol>
   </section>
 
