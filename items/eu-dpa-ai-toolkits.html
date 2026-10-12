@@ -259,6 +259,9 @@
   .ip-history li:first-child { border-top: none; }
   .ip-history .h-date { font-family: "IBM Plex Mono", monospace; font-weight: 600; color: var(--ink-soft); margin-right: 8px; }
   .ip-history .h-tier { font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--muted); border: 1px solid var(--line-strong); border-radius: 2px; padding: 0 4px; margin-left: 6px; }
+  .ip-parts ul { margin: 0; padding-left: 18px; }
+  .ip-parts li { margin: 0 0 8px; line-height: 1.6; color: var(--ink-soft); }
+  .ip-part-note { display: block; font-size: .85rem; color: var(--muted); }
   .sc-new { --sc: var(--stat-new); } .sc-draft { --sc: var(--stat-draft); } .sc-stable { --sc: var(--stat-stable); }
 
   /* ------- 기업 의견수렴(consultation) — chip 마커·상단 박스는 인라인 style 로 생성한다
@@ -297,6 +300,14 @@
     </div>
   </header>
 
+
+  <section class="ip-sec ip-parts">
+    <h2>구성 (2)</h2>
+    <ul>
+      <li><b>CNIL(프랑스)</b> AI 권고 시리즈<span class="ip-part-note">모델 개발 GDPR 적용 · 주석 작업 · 보안 · 책임 배분</span></li>
+      <li><b>ICO(영국)</b> Guidance on AI and data protection · AI 감사 프레임워크·툴킷<span class="ip-part-note">UK GDPR 원칙 체크리스트</span></li>
+    </ul>
+  </section>
   <section class="ip-sec ip-summary">
     <h2>요약</h2>
     <p>EU·영국의 개별 개인정보 감독기구(DPA)가 발간한, AI 시스템의 프라이버시 준수를 위한 실무 가이드와 감사 도구 모음이다.</p><p>프랑스 CNIL은 일련의 AI 권고를 냈다 — 모델 개발에 GDPR을 어떻게 적용할지, 학습데이터 라벨링·주석 작업의 개인정보 취급, AI 시스템의 보안 요건, 그리고 데이터 제공자·모델 개발자·통합자·배포자로 이어지는 &#x27;창작 체인&#x27;에서 각 행위자의 책임 배분 등을 다룬다.</p><p>영국 ICO는 「Guidance on AI and data protection」과 AI·biometrics 감사 프레임워크·툴킷을 제공한다. 공정성·투명성·정확성·데이터 최소화·자동화된 결정에 대한 설명 등 UK GDPR 원칙을 AI 개발·운영 단계에 체크리스트 형태로 대응시켜, 조직이 자체 감사하거나 규제기관 조사에 대비할 수 있게 한다. 독일 각 주 DPA, 스페인 AEPD, 이탈리아 Garante 등도 유사한 가이드를 내며, CNIL·ICO 자료가 가장 널리 참조된다.</p>

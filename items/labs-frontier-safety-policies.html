@@ -259,6 +259,9 @@
   .ip-history li:first-child { border-top: none; }
   .ip-history .h-date { font-family: "IBM Plex Mono", monospace; font-weight: 600; color: var(--ink-soft); margin-right: 8px; }
   .ip-history .h-tier { font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--muted); border: 1px solid var(--line-strong); border-radius: 2px; padding: 0 4px; margin-left: 6px; }
+  .ip-parts ul { margin: 0; padding-left: 18px; }
+  .ip-parts li { margin: 0 0 8px; line-height: 1.6; color: var(--ink-soft); }
+  .ip-part-note { display: block; font-size: .85rem; color: var(--muted); }
   .sc-new { --sc: var(--stat-new); } .sc-draft { --sc: var(--stat-draft); } .sc-stable { --sc: var(--stat-stable); }
 
   /* ------- 기업 의견수렴(consultation) — chip 마커·상단 박스는 인라인 style 로 생성한다
@@ -296,6 +299,15 @@
     </div>
   </header>
 
+
+  <section class="ip-sec ip-parts">
+    <h2>구성 (3)</h2>
+    <ul>
+      <li><b>Anthropic</b> Responsible Scaling Policy<span class="ip-part-note">v3.0 2026-02-24</span></li>
+      <li><b>OpenAI</b> Preparedness Framework<span class="ip-part-note">위험 범주별 능력 평가·임계</span></li>
+      <li><b>Google DeepMind</b> Frontier Safety Framework<span class="ip-part-note">v3.0 2026-04-17</span></li>
+    </ul>
+  </section>
   <section class="ip-sec ip-summary">
     <h2>요약</h2>
     <p>첨단 AI를 개발하는 주요 랩들이 각자 공개한 자율 안전 프레임워크의 묶음이다. 공통 구조는 &#x27;모델 능력이 특정 위험 임계에 도달하면, 그에 상응하는 안전·보안 조치를 갖추기 전에는 학습·배포를 진행하지 않는다&#x27;는 조건부 약속이다.</p><p>Anthropic의 「Responsible Scaling Policy(RSP)」는 AI Safety Level(ASL) 등급을 정의하고, 각 등급에서 요구되는 배포·보안 기준을 명시한다. OpenAI의 「Preparedness Framework」는 사이버, CBRN, 설득, 모델 자율성 등 위험 범주별로 능력을 평가하고 임계(scorecard)를 넘으면 완화 조치를 요구한다. Google DeepMind의 「Frontier Safety Framework(FSF)」는 &#x27;Critical Capability Level&#x27;을 정의하고 도달 시 대응 프로토콜을 발동한다.</p><p>세 프레임워크 모두 정기적 능력 평가, 레드팀, 거버넌스 위원회, 모델 가중치 보안, 그리고 임계 초과 시 개발 중단 옵션을 공통으로 담는다. EU AI Act의 GPAI 실천규범, 히로시마 AI 프로세스 보고 프레임워크와 상호 참조된다. 각 랩이 수시로 개정하므로 개별 최신본 확인이 필요하다(<sub class="tgrade">[T3]</sub>).</p>

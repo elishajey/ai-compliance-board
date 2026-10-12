@@ -259,6 +259,9 @@
   .ip-history li:first-child { border-top: none; }
   .ip-history .h-date { font-family: "IBM Plex Mono", monospace; font-weight: 600; color: var(--ink-soft); margin-right: 8px; }
   .ip-history .h-tier { font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--muted); border: 1px solid var(--line-strong); border-radius: 2px; padding: 0 4px; margin-left: 6px; }
+  .ip-parts ul { margin: 0; padding-left: 18px; }
+  .ip-parts li { margin: 0 0 8px; line-height: 1.6; color: var(--ink-soft); }
+  .ip-part-note { display: block; font-size: .85rem; color: var(--muted); }
   .sc-new { --sc: var(--stat-new); } .sc-draft { --sc: var(--stat-draft); } .sc-stable { --sc: var(--stat-stable); }
 
   /* ------- 기업 의견수렴(consultation) — chip 마커·상단 박스는 인라인 style 로 생성한다
@@ -296,6 +299,14 @@
     </div>
   </header>
 
+
+  <section class="ip-sec ip-parts">
+    <h2>구성 (2)</h2>
+    <ul>
+      <li>Responsible AI Standard<span class="ip-part-note">전면 개편(Deployer Chapter 신설) 2026-09-01</span></li>
+      <li>PyRIT<span class="ip-part-note">오픈소스 AI 레드팀 도구 · 1.1.0 2026-09-04</span></li>
+    </ul>
+  </section>
   <section class="ip-sec ip-summary">
     <h2>요약</h2>
     <p>Microsoft가 공개한 책임 있는 AI 관련 문서·도구 묶음이다. 자사 제품 개발의 내부 기준이면서 외부에도 참조 자료로 제공된다.</p><p>핵심은 「Responsible AI Standard」(현재 v2). 공정성, 신뢰성·안전, 프라이버시·보안, 포용성, 투명성, 책임성 여섯 원칙을 제품 팀이 지켜야 할 구체 요구사항(goal → requirement)으로 풀어낸다 — 영향평가 수행, 적합 용도 정의, 데이터 요구사항 문서화, 인간 감독 설계, 신뢰성·안전 테스트, 투명성 노트 제공 등.</p><p>여기에 실무 도구가 붙는다 — AI Red Team의 방법론과 교훈, 오픈소스 자동 레드팀 도구 PyRIT(Python Risk Identification Toolkit, LLM에 대한 프롬프트 공격을 대규모로 자동 수행), 그리고 초기 자료인 「Failure Modes in Machine Learning」(의도적·비의도적 실패 분류). Azure AI의 콘텐츠 안전·평가 기능도 이 기준을 반영한다. 최근 본문 개정은 확인되지 않았다.</p>

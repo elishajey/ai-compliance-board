@@ -259,6 +259,9 @@
   .ip-history li:first-child { border-top: none; }
   .ip-history .h-date { font-family: "IBM Plex Mono", monospace; font-weight: 600; color: var(--ink-soft); margin-right: 8px; }
   .ip-history .h-tier { font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--muted); border: 1px solid var(--line-strong); border-radius: 2px; padding: 0 4px; margin-left: 6px; }
+  .ip-parts ul { margin: 0; padding-left: 18px; }
+  .ip-parts li { margin: 0 0 8px; line-height: 1.6; color: var(--ink-soft); }
+  .ip-part-note { display: block; font-size: .85rem; color: var(--muted); }
   .sc-new { --sc: var(--stat-new); } .sc-draft { --sc: var(--stat-draft); } .sc-stable { --sc: var(--stat-stable); }
 
   /* ------- 기업 의견수렴(consultation) — chip 마커·상단 박스는 인라인 style 로 생성한다
@@ -297,6 +300,15 @@
     </div>
   </header>
 
+
+  <section class="ip-sec ip-parts">
+    <h2>구성 (3)</h2>
+    <ul>
+      <li>AI 개발·서비스를 위한 공개된 개인정보 처리 안내서<span class="ip-part-note">2024-07-17</span></li>
+      <li>생성형 AI 개발·활용을 위한 개인정보 처리 안내서<span class="ip-part-note">2025-08</span></li>
+      <li>생성형 AI 서비스 이용자를 위한 개인정보 보호 가이드<span class="ip-part-note">2026-05 · 이용자용</span></li>
+    </ul>
+  </section>
   <section class="ip-sec ip-summary">
     <h2>요약</h2>
     <p>개인정보보호위원회가 2024년 7월 17일 발간한 「인공지능(AI) 개발·서비스를 위한 공개된 개인정보 처리 안내서」다. 웹사이트·블로그·위키·커먼크롤·출판물·방송 등 &#x27;누구나 합법적으로 접근 가능한&#x27; 개인정보를 AI 학습에 활용할 때 개인정보보호법상 무엇이 허용되고 어떤 안전조치가 필요한지 정리한다.</p><p>핵심은 &#x27;정당한 이익&#x27;(법 제15조 제1항 제6호)을 처리 근거로 삼기 위한 요건 — 목적의 정당성, 처리의 필요성, 이익형량(정보주체 권리·이익 대비) — 과 이를 뒷받침할 안전조치(가명·익명 처리, 학습데이터에서 민감정보·아동정보 배제, 출력 단계의 개인정보 노출 방지, 정보주체의 열람·삭제 요구 대응 창구, 투명성 공개)다. EU EDPB의 Opinion 28/2024·웹스크래핑 가이드라인과 문제의식이 같다.</p><p>개인정보위는 2025년 8월 후속으로 「생성형 인공지능(AI) 개발·활용을 위한 개인정보 처리 안내서」를 냈고, 그 밖에 자동화된 결정, 이동형 영상기기, 생체정보 등 AI 관련 프라이버시 가이드를 지속적으로 발간하고 있다. 이 항목은 &#x27;개인정보 도메인의 AI 규범&#x27; 대표로 둔다.</p>

@@ -259,6 +259,9 @@
   .ip-history li:first-child { border-top: none; }
   .ip-history .h-date { font-family: "IBM Plex Mono", monospace; font-weight: 600; color: var(--ink-soft); margin-right: 8px; }
   .ip-history .h-tier { font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--muted); border: 1px solid var(--line-strong); border-radius: 2px; padding: 0 4px; margin-left: 6px; }
+  .ip-parts ul { margin: 0; padding-left: 18px; }
+  .ip-parts li { margin: 0 0 8px; line-height: 1.6; color: var(--ink-soft); }
+  .ip-part-note { display: block; font-size: .85rem; color: var(--muted); }
   .sc-new { --sc: var(--stat-new); } .sc-draft { --sc: var(--stat-draft); } .sc-stable { --sc: var(--stat-stable); }
 
   /* ------- 기업 의견수렴(consultation) — chip 마커·상단 박스는 인라인 style 로 생성한다
@@ -297,6 +300,14 @@
     </div>
   </header>
 
+
+  <section class="ip-sec ip-parts">
+    <h2>구성 (2)</h2>
+    <ul>
+      <li>익명화 가이드라인<span class="ip-part-note">2026-07-07 채택 · 의견수렴 10-30 마감</span></li>
+      <li>생성형 AI 웹스크래핑 가이드라인<span class="ip-part-note">2026-07-07 채택 · 의견수렴 10-30 마감</span></li>
+    </ul>
+  </section>
   <section class="ip-sec ip-summary">
     <h2>요약</h2>
     <p>EDPB가 2026년 7월 7일 채택해 공개 의견수렴에 부친 두 건의 가이드라인 묶음이다. 생성형 AI 학습 데이터의 프라이버시 문제를 정면으로 다룬다.</p><p>익명화 가이드라인은 &#x27;어떤 경우에 데이터가 진정으로 익명이라 GDPR 적용을 벗어나는가&#x27;를 다룬다. 재식별 가능성(단독·결합·추론), 사용된 기법의 강건성, 처리 맥락과 공격자 역량을 종합적으로 평가해야 하며, 단순 가명처리나 필드 삭제만으로는 익명으로 인정되지 않는다는 점을 명확히 한다.</p><p>웹스크래핑 가이드라인은 생성형 AI 학습을 위한 대규모 공개 데이터 수집이 GDPR을 준수하려면 무엇이 필요한지 규정한다 — 정당한 이익 근거의 3단계 형량, 민감정보·아동 데이터의 배제, 정보주체에 대한 투명성 확보(개별 통지가 불가능할 때의 대체 조치), 반대·삭제 권리 행사 창구, 데이터 최소화와 보관기간 제한 등이다. 의견수렴은 2026년 10월 30일 마감되며, 최종본이 확정되면 EU 내 모델 학습 관행에 직접 영향을 준다.</p>
