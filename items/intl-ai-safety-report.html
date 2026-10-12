@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI SEC Compliance Dashboard</title>
-<meta name="description" content="NIST·MITRE·OWASP·ISO 등 AI 보안·프라이버시 규격/프레임워크 40여 종을 발행 주체별 8개 모듈로 나눠 모니터링하는 보드 — 각 기준의 요약·전문·변동 이력 포함">
+<meta name="description" content="NIST·MITRE·OWASP·ISO 등 AI 보안·프라이버시 규격·프레임워크와 관련 법령 79종을 발행 주체별 8개 모듈로 나눠 갱신·초안·유지 상태를 추적하는 보드 — 각 기준의 요약·전문·변동 이력 포함">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -140,7 +140,14 @@
   }
 
   .mod-span2 { grid-column: 1 / -1; }
-  .mod-span2 .chips { flex-wrap: nowrap; overflow-x: auto; }
+  /* 예전엔 nowrap + 가로 스크롤이었는데, 칩이 7개로 늘면서 오른쪽 칩이 스크롤해야만 보이고
+     더 있다는 표시도 없어 줄바꿈으로 바꿨다(2026-10-12). */
+  .mod-span2 .chips { flex-wrap: wrap; }
+
+  /* 모듈 안 축(근거 체계) 머리글 — 칩 줄을 끊고 한 줄 전체를 차지한다(2026-10-12). */
+  .axis-head { flex: 1 1 100%; font-family: "IBM Plex Mono", monospace; font-size: 11px; font-weight: 600; color: var(--ink-soft); letter-spacing: .02em; padding: 8px 0 3px; border-bottom: 1px solid var(--line); margin-top: 4px; }
+  .axis-head:first-child { margin-top: 0; padding-top: 0; }
+  .axis-basis { font-weight: 400; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
   .mod-span2 .chip { flex: 1 1 220px; min-width: 200px; }
 
   /* ------- 모듈 03/05 "더보기"(2026-09-18 — 짝지은 04/06과 높이를 맞추려고 일부만 기본 노출) ------- */
@@ -259,6 +266,23 @@
      여기 CSS 는 항목 상세 페이지(items/*.html, 이메일 렌더러 안 거침) 전용. ------- */
   .ip-consult { border: 1px solid #b0531d; border-left: 4px solid #b0531d; border-radius: 4px; background: #f0dfd1; padding: 12px 16px; margin: 18px 0 6px; font-size: .95rem; }
   .ip-consult b { color: #b0531d; }
+
+  /* ------- board.html(Artifact)의 인라인 style 상자들 다크모드 대응(2026-10-12) ------- */
+  /* 상단 "이번 주 변화 요약"·의견수렴 상자는 이메일 렌더러 제약 때문에 class 없이 라이트
+     색 리터럴만 인라인으로 쓴다 — 그래서 Artifact를 다크모드로 보면 이 상자만 흰 배경으로
+     떴다. build_board()가 그 요소들에 data-ce 속성을 붙이고, 여기서 !important 로 인라인
+     색을 테마 변수로 덮는다. 라이트 모드 변수값이 인라인 리터럴과 같아 라이트는 그대로다.
+     이메일은 <style>이 없으므로 data-ce 는 무시된다. */
+  [data-ce~="box"] { background: var(--surface) !important; border-color: var(--line) !important; box-shadow: var(--shadow) !important; }
+  [data-ce~="head"] { background: var(--surface-2) !important; border-bottom-color: var(--line) !important; border-top-color: var(--accent) !important; }
+  [data-ce~="sep"] { border-top-color: var(--line) !important; }
+  [data-ce~="ink"] { color: var(--ink) !important; }
+  [data-ce~="muted"] { color: var(--muted) !important; }
+  [data-ce~="accent"] { color: var(--accent) !important; }
+  [data-ce~="new"] { color: var(--stat-new) !important; border-color: var(--stat-new) !important; }
+  [data-ce~="draft"] { color: var(--stat-draft) !important; border-color: var(--stat-draft) !important; }
+  [data-ce~="consult"] { background: var(--m5-soft) !important; border-color: var(--m5) !important; }
+  [data-ce~="consult-ink"] { color: var(--m5) !important; }
 </style>
 
 <div class="wrap item-page sc-stable">
@@ -268,6 +292,7 @@
     <h1>연 1회 과학적 위험 평가</h1>
     <div class="ip-meta">
       <span>International AI Safety Report · 30개국+ (Bengio 의장)</span>
+      <span>원칙·행동강령·과학 평가 › 보고서</span>
       <span class="badge">유지</span>
     </div>
   </header>
