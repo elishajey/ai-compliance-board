@@ -304,12 +304,18 @@
   .nw-field { display: flex; flex-direction: column; gap: 4px; flex: 1 1 260px; min-width: 0; }
   .nw-flabel { font-family: "IBM Plex Mono", monospace; font-size: 11px; font-weight: 600; letter-spacing: .04em; color: var(--muted); }
   .nw-flabel em { font-style: normal; font-weight: 400; margin-left: 6px; }
-  .nw-filter select, .nw-tagbox > summary { width: 100%; max-width: 100%; box-sizing: border-box; font: inherit; font-size: .92rem; color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 4px; padding: 7px 10px; }
+  .nw-filter select, .nw-tagbox > summary { display: block; width: 100%; max-width: 100%; box-sizing: border-box; height: 40px; margin: 0; font: inherit; font-size: .92rem; line-height: 24px; color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 4px; padding: 7px 30px 7px 10px; }
+  .nw-filter select { -webkit-appearance: none; appearance: none; cursor: pointer; text-overflow: ellipsis; }
+  .nw-sel { position: relative; display: block; }
+  .nw-sel::after { content: "▾"; position: absolute; right: 11px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+  .nw-flabel { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .nw-filter select:focus, .nw-tagbox > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
   .nw-tagbox > summary { cursor: pointer; list-style: none; }
   .nw-tagbox > summary::-webkit-details-marker { display: none; }
-  .nw-tagbox > summary::after { content: "▾"; float: right; color: var(--muted); }
+  .nw-tagbox > summary { position: relative; }
+  .nw-tagbox > summary::after { content: "▾"; position: absolute; right: 11px; top: 50%; transform: translateY(-50%); color: var(--muted); }
   .nw-tagbox[open] > summary::after { content: "▴"; }
+  .nw-filter { align-items: flex-start; }
   .nw-chips { display: flex; flex-wrap: wrap; gap: 6px; max-height: 240px; overflow-y: auto; margin-top: 6px; padding: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; }
   .nw-chip { cursor: pointer; }
   .nw-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
