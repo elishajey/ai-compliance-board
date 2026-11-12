@@ -236,8 +236,9 @@
   /* ------- index.html: 칩 전체를 상세 페이지 링크로 (stretched link, 새 탭) ------- */
   .chip > a.chip-jump { position: absolute; inset: 0; z-index: 1; border-radius: 4px; }
   .chip:hover { border-color: var(--mc); }
-  .board-note { margin-top: 26px; font-size: .88rem; color: var(--muted); }
-  .chg-divider { border: none; border-top: 1px solid var(--line); margin: 28px 0 0; }
+  .board-note { margin-top: 18px; font-size: .88rem; color: var(--muted); }
+  /* 요약·진행 중 상자와 01~08 보드 사이 구분(2026-11-12 사용자 선택 D — 1px 선은 카드 테두리와 구별이 안 됐다) */
+  .chg-divider { border: none; border-top: 6px double var(--ink-soft); margin: 48px 0 0; }
 
   /* ------- items/<id>.html: 항목 상세 페이지 ------- */
   .item-page { max-width: 760px; }
