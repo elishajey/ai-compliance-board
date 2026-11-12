@@ -300,6 +300,13 @@
   .nw-day > h2 { font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--muted); margin: 0 0 10px; }
   .nw-item { padding: 12px 0; border-top: 1px dashed var(--line); }
   .nw-item:first-of-type { border-top: none; padding-top: 0; }
+  .nw-filter { display: flex; flex-wrap: wrap; gap: 10px 16px; margin: 18px 0 0; }
+  .nw-filter label { display: flex; flex-direction: column; gap: 4px; flex: 1 1 220px; min-width: 0; }
+  .nw-filter label > span { font-family: "IBM Plex Mono", monospace; font-size: 11px; font-weight: 600; letter-spacing: .04em; color: var(--muted); }
+  .nw-filter select { width: 100%; max-width: 100%; font: inherit; font-size: .92rem; color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 4px; padding: 7px 8px; }
+  .nw-filter select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .nw-nomatch { margin: 22px 0 0; color: var(--muted); font-style: italic; }
+  .nw-day > h3 { font-size: 1.08rem; line-height: 1.45; margin: 4px 0 8px; color: var(--ink); }
   .nw-std { font-family: "IBM Plex Mono", monospace; font-size: 11px; font-weight: 600; color: var(--accent); }
   .nw-sum { margin: 0 0 10px; font-size: .97rem; line-height: 1.65; color: var(--ink-soft); }
   .nw-more { margin-top: 10px; }
