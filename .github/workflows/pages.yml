@@ -35,12 +35,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      # board.html/index.html/items/법령_전문 만 배포 산출물로 쓴다 (스캔 스크립트·README 등은 제외).
+      # board.html/index.html/news.html/items/법령_전문 만 배포 산출물로 쓴다 (스캔 스크립트·README 등은 제외).
       # 새 아카이브 폴더가 생기면 여기도 같이 고쳐야 한다.
       - name: build site dir
         run: |
           mkdir -p _site
-          cp board.html index.html _site/
+          cp board.html index.html news.html _site/
           cp -r items _site/items
           if [ -d "법령_전문" ]; then cp -r 법령_전문 _site/법령_전문; fi
       - uses: actions/configure-pages@v5
