@@ -352,8 +352,8 @@
 </style>
 <style>
   /* 마스코트(2026-11-13) — 웹 제목 옆. 반짝이는 오늘의 뉴스가 있을 때만 붙는다. */
-  .mast-title { display: flex; align-items: center; gap: 10px; }
-  .mascot { position: relative; flex: none; display: inline-block; width: 36px; height: 34px; }
+  .mast-tail { white-space: nowrap; }  /* 마지막 단어와 눈표범이 같은 줄에 붙어 다니게(모바일 줄바꿈 대비) */
+  .mascot { position: relative; display: inline-block; vertical-align: -0.08em; margin-left: .28em; width: 36px; height: 34px; }
   .mascot-img { display: block; width: 36px; height: 34px; }
   .mascot-spark { position: absolute; top: -5px; right: -9px; width: 11px; height: 14px;
                   animation: mascot-twinkle 1.8s ease-in-out infinite; transform-origin: 50% 50%; }
@@ -368,7 +368,7 @@
 
   <header class="mast">
     <div class="kicker">Compliance Registry</div>
-    <h1 class="mast-title">AI SEC Compliance Dashboard<span class="mascot"><img class="mascot-img" src="items/assets/mascot.png" alt="" width="36" height="34"></span></h1>
+    <h1 class="mast-title">AI SEC Compliance <span class="mast-tail">Dashboard<span class="mascot"><img class="mascot-img" src="items/assets/mascot.png" alt="" width="36" height="34"></span></span></h1>
     <div class="legend">
       <span><b>⭐</b> 사실상 표준</span>
       <span><b>🔐</b> 보안 특화</span>
@@ -386,7 +386,7 @@
       <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--dot-draft);display:inline-block;"></span><b style="color:var(--stat-draft)">초안/의견수렴</b> 확정 전 단계인 상태</span>
       <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--stat-stable);display:inline-block;"></span><b style="color:var(--stat-stable)">유지</b> — 확인된 변동 없음</span>
     </div>
-    <p class="byline">reported by elishaJEY(장은영: <a href="https://www.linkedin.com/in/%EC%9D%80%EC%98%81-%EC%9E%A5-b548a135/" target="_blank" rel="noopener">LinkedIn ↗</a>), 2026.11.13 (268)</p>
+    <p class="byline">reported by elishaJEY(장은영: <a href="https://www.linkedin.com/in/%EC%9D%80%EC%98%81-%EC%9E%A5-b548a135/" target="_blank" rel="noopener">LinkedIn ↗</a>), 2026.11.13 (271)</p>
   </header>
 
 
