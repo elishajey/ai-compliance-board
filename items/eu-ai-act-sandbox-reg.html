@@ -279,8 +279,8 @@
   /* ------- 기업 의견수렴(consultation) — chip 마커·상단 박스는 인라인 style 로 생성한다
      (board.html 이 _email_render_registry.py 를 거치는데 미치환 class 를 거부하므로).
      여기 CSS 는 항목 상세 페이지(items/*.html, 이메일 렌더러 안 거침) 전용. ------- */
-  .ip-consult { border: 1px solid #b0531d; border-left: 4px solid #b0531d; border-radius: 4px; background: #f0dfd1; padding: 12px 16px; margin: 18px 0 6px; font-size: .95rem; }
-  .ip-consult b { color: #b0531d; }
+  .ip-consult { border: 1px solid var(--m5); border-left: 4px solid var(--m5); border-radius: 4px; background: var(--m5-soft); padding: 12px 16px; margin: 18px 0 6px; font-size: .95rem; }
+  .ip-consult b { color: var(--m5); }
 
   /* ------- board.html(Artifact)의 인라인 style 상자들 다크모드 대응(2026-10-12) ------- */
   /* 상단 "이번 주 변화 요약"·의견수렴 상자는 이메일 렌더러 제약 때문에 class 없이 라이트
